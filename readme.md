@@ -20,17 +20,6 @@ Each module performs a separate function within the HRMS that helps with informa
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contribution for the project
-
-
-    1. Fork it
-    2. Create your feature branch (git checkout -b my-new-feature)
-    3. Make your changes
-    4. Run the tests, adding new ones for your own code if necessary (phpunit)
-    5. Commit your changes (git commit -am 'Added some feature')
-    6. Push to the branch (git push origin my-new-feature)
-    7. Create new Pull Request
-
 ## Project License
 
 The project is available to be used freely for personal and educational purposes, cloning the project does not gives you any rights to sell it online/offline.
@@ -52,7 +41,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 It is preferred to have git setup installed on your local system.
 
-Once downloaded/cloned go to the project directory on terminal/command line and run composer install or composer.phar install
+Once downloaded/cloned go to the project directory on terminal/command line and install composer:
+
+    composer install
 
 Once composer is installed, run migration: 
 
@@ -64,7 +55,7 @@ After migration, run the database seeder:
     
 Once done migrating and seeding you will have default user:
 
-    email: email@gmail.com
-    password: 123456   
+    email: info@gravitybpo.com
+    password: GravityBPO123
   
 ### Credit to the original developer, kmanjari - https://github.com/kmanjari/hrms
