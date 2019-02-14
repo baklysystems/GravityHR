@@ -1,4 +1,4 @@
-# Human Resource Management System
+# GravityHR - Human Resource Management System
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
@@ -7,7 +7,7 @@
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
 
-Human Resource Management System is a combination of systems and processes that connect human resource management and information technology through HRMS software.
+GravityHR is a combination of systems and processes that connect human resource management and information technology through HRMS software.
 
 Each module performs a separate function within the HRMS that helps with information gathering or tracking. HRMS modules can assist with:
 1. Employee Management
