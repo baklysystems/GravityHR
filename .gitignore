@@ -1,11 +1,11 @@
-### Laravel ###
+/bootstrap/compiled.php
+/build/logs
+/build/coverage
 /node_modules
 /vendor
-vendor/
-node_modules/
 
-# Laravel 5 & Lumen specific
-bootstrap/cache/
-.env.*.php
-.env.php
+/.idea
+/_ide_helper.php
+
+.DS_Store
 .env

@@ -480,8 +480,7 @@
         <footer id="content-footer" class="affix">
             <div class="row">
                 <div class="col-md-6">
-                    <span class="footer-legal">Human Resource Management System © 2016 All rights reserved. By <a
-                                href="mailto:andrewarianda@gmail.com.com?Subject=HRM%20Software" target="_blank">Clint A. Andrew</a></span>
+                    <span class="footer-legal">Human Resource Management System © 2019 All rights reserved.</span>
                 </div>
                 <div class="col-md-6 text-right">
                     <span class="footer-meta"></span>
@@ -767,17 +766,6 @@ h
         /////////////////////////////////////////////
 
 </script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108812473-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-108812473-2');
-</script>
-
 
 <script src="{{ URL::asset('assets/js/pages/allcp_forms-elements.js') }}"></script>
 </body>

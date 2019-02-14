@@ -12,9 +12,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         \DB::table('users')->insert([
-            'name' => 'HR Manager',
-            'email' => 'email@gmail.com',
-            'password' => bcrypt('123456'),
+            'name' => 'admin',
+            'email' => 'info@gravitybpo.com',
+            'password' => bcrypt('GravityBPO123'),
         ]);
     }
 }

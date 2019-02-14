@@ -371,7 +371,7 @@
                                         <label for="input002" class="field prepend-icon">
                                             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                                 <input type="text" name="emp_name" id="emp_name" class="gui-input"
-                                                       value="@if($emps && $emps->employee->name){{$emps->employee->name}}@endif" required>
+                                                       value="@if($emps && $emps->employee->first_name){{$emps->employee->first_name}}@endif" required>
                                                 <label for="input002" class="field-icon">
                                                     <i class="fa fa-user"></i>
                                                 </label>
@@ -414,7 +414,7 @@
                                                 <select class="select2-single form-control" name="role" id="role" readonly required>
                                                     <option value="">Select role</option>
                                                     @foreach($roles as $role)
-                                                        @if($emps->role->role->id == $role->id)
+                                                        @if(isset($emps->role->role->id) && $emps->role->role->id == $role->id)
                                                             <option value="{{$role->id}}" selected>{{$role->name}}</option>
                                                         @endif
                                                         <option value="{{$role->id}}">{{$role->name}}</option>

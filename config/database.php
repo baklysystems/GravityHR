@@ -1,4 +1,9 @@
 <?php
+define('RDS_HOSTNAME', isset($_SERVER['RDS_HOSTNAME']) ? $_SERVER['RDS_HOSTNAME'] : env('DB_HOST'));
+define('RDS_PORT', isset($_SERVER['RDS_PORT']) ? $_SERVER['RDS_PORT'] : env('DB_PORT'));
+define('RDS_USERNAME', isset($_SERVER['RDS_USERNAME']) ? $_SERVER['RDS_USERNAME'] : env('DB_USERNAME'));
+define('RDS_PASSWORD', isset($_SERVER['RDS_PASSWORD']) ? $_SERVER['RDS_PASSWORD'] : env('DB_PASSWORD'));
+define('RDS_DB_NAME', isset($_SERVER['RDS_DB_NAME']) ? $_SERVER['RDS_DB_NAME'] : env('DB_DATABASE'));
 
 return [
 
@@ -54,11 +59,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'hrms'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => RDS_HOSTNAME,
+            'port' => RDS_PORT,
+            'database' => RDS_DB_NAME,
+            'username' => RDS_USERNAME,
+            'password' => RDS_PASSWORD,
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

@@ -10,7 +10,9 @@
         "laravelcollective/html": "5.2.*",
         "doctrine/dbal": "^2.5",
         "maatwebsite/excel": "~2.0",
-        "thestringler-laravel/manipulator": "^1.1"
+        "thestringler-laravel/manipulator": "^1.1",
+        "arcanedev/log-viewer": "^4.3",
+        "barryvdh/laravel-debugbar": "^2.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

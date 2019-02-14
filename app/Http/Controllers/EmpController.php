@@ -253,6 +253,11 @@ class EmpController extends Controller
 
         $edit->save();
 
+        // Update the user role
+        $user_roles = UserRole::firstOrNew(['user_id' => $id]);
+        $user_roles->role_id = $request->role;
+        $user_roles->save();
+
         return json_encode(['title' => 'Success', 'message' => 'Employee details successfully updated', 'class' => 'modal-header-success']);
     }
 
