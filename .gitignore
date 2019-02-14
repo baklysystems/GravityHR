@@ -9,5 +9,5 @@
 /_ide_helper.php
 
 .DS_Store
-/.vagrant
+/.vagrant/*
 .env
