@@ -691,15 +691,6 @@
 .allcp-form .append-icon .field-icon {
   right: 0;
 }
-.allcp-form .prepend-icon > input,
-.allcp-form .prepend-icon > textarea {
-  padding-left: 36px;
-}
-.allcp-form .append-icon > input,
-.allcp-form .append-icon > textarea {
-  padding-right: 36px;
-  padding-left: 10px;
-}
 .allcp-form .append-icon > textarea {
   padding-right: 36px;
 }

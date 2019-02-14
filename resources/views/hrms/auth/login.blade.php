@@ -63,9 +63,6 @@
                             <div class="section">
                                 <label for="username" class="field prepend-icon">
                                     <input type="text" name="email" id="email" class="gui-input" placeholder="Email">
-                                    <label for="email" class="field-icon">
-                                        <i class="fa fa-user"></i>
-                                    </label>
                                 </label>
                             </div>
                             <!-- -------------- /section -------------- -->
@@ -73,9 +70,6 @@
                             <div class="section">
                                 <label for="password" class="field prepend-icon">
                                     <input type="password" name="password" id="password" class="gui-input" placeholder="Password">
-                                    <label for="password" class="field-icon">
-                                        <i class="fa fa-lock"></i>
-                                    </label>
                                 </label>
                             </div>
                             <!-- -------------- /section -------------- -->

@@ -61,16 +61,19 @@ sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver mul
 sudo apt-get -y install phpmyadmin
 
 # PHP
+# https://medium.com/@lazycoding/installing-apache-2-php-5-6-mysql-on-ubuntu-14-04-eb3887ceeee1
 echo "Installing PHP"
 sudo apt-get update
 sudo apt-get install python-software-properties -y 
-sudo add-apt-repository -y ppa:ondrej/php5
+sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
-sudo apt-get -y install php5-common php5-dev php5-cli php5-fpm
-sudo apt-get -y install curl mcrypt php5-curl php5-gd php5-mcrypt php5-mysql php5-xdebug php5-json php5-xmlrpc
+sudo apt-get -y install php5.6 mcrypt php5.6-mcrypt php5.6-mbstring curl php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip libapache2-mod-php5.6
+sudo apt-get -y install php5.6-xdebug php5.6-json php5.6-xmlrpc
 sudo php5enmod mcrypt
 
-# enable mod_rewrite
+# enable apache modules
+sudo a2dismod php5
+sudo a2enmod php5.6
 sudo a2enmod rewrite
 
 # Restart Apache
@@ -83,7 +86,8 @@ sudo mv composer.phar /usr/local/bin/composer
 
 # Installing Node
 echo "Installing Node"
-sudo curl -sL https://deb.nodesource.com/setup | sudo bash - 
+# sudo curl -sL https://deb.nodesource.com/setup | sudo bash - 
+sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo bash - 
 sudo apt-get install -y nodejs
 sudo npm install -g npm
 

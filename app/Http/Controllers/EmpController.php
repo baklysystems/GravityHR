@@ -111,7 +111,7 @@ class EmpController extends Controller
 
     public function doEdit(Request $request, $id)
     {
-        $filename = public_path('photos/a.png');
+        $filename = public_path('img/avatar.png');
         if ($request->file('photo')) {
             $file             = $request->file('photo');
             $filename         = str_random(12);
@@ -123,142 +123,50 @@ class EmpController extends Controller
             }
             $filename = $filename . '.' . $fileExt;
             $file->move($destinationPath, $filename);
-
         }
-
-        $photo             = $request->$filename;
-        $emp_name          = $request->name;
-        $emp_code          = $request->code;
-        $emp_status        = $request->status;
-        $gender            = $request->gender;
-        $dob               = date_format(date_create($request->date_of_birth), 'Y-m-d');
-        $doj               = date_format(date_create($request->date_of_joining), 'Y-m-d');
-        $mob_number        = $request->number;
-        $qualification     = $request->qualification;
-        $emer_number       = $request->emergency_number;
-        $pan_number        = $request->pan_number;
-        $father_name       = $request->father_name;
-        $address           = $request->current_address;
-        $permanent_address = $request->permanent_address;
-        $formalities       = $request->formalities;
-        $offer_acceptance  = $request->offer_acceptance;
-        $prob_period       = $request->probation_period;
-        $doc               = date_format(date_create($request->date_of_confirmation), 'Y-m-d');
-        $department        = $request->department;
-        $salary            = $request->salary;
-        $account_number    = $request->account_number;
-        $bank_name         = $request->bank_name;
-        $ifsc_code         = $request->ifsc_code;
-        $pf_account_number = $request->pf_account_number;
-        $un_number         = $request->un_number;
-        $pf_status         = $request->pf_status;
-        $dor               = date_format(date_create($request->date_of_resignation), 'Y-m-d');
-        $notice_period     = $request->notice_period;
-        $last_working_day  = date_format(date_create($request->last_working_day), 'Y-m-d');
-        $full_final        = $request->full_final;
 
         //$edit = Employee::findOrFail($id);
-        $edit = Employee::where('user_id', $id)->first();
+        $edit = Employee::where('id', $id)->first();
 
-        if (!empty($photo)) {
-            $edit->photo = $photo;
-        }
-        if (!empty($emp_name)) {
-            $edit->name = $emp_name;
-        }
-        if (!empty($emp_code)) {
-            $edit->code = $emp_code;
-        }
-        if (!empty($emp_status)) {
-            $edit->status = $emp_status;
-        }
-        if (!empty($gender)) {
-            $edit->gender = $gender;
-        }
-        if (!empty($dob)) {
-            $edit->date_of_birth = $dob;
-        }
-        if (!empty($doj)) {
-            $edit->date_of_joining = $doj;
-        }
-        if (!empty($mob_number)) {
-            $edit->number = $mob_number;
-        }
-        if (!empty($qualification)) {
-            $edit->qualification = $qualification;
-        }
-        if (!empty($emer_number)) {
-            $edit->emergency_number = $emer_number;
-        }
-        if (!empty($pan_number)) {
-            $edit->pan_number = $pan_number;
-        }
-        if (!empty($father_name)) {
-            $edit->father_name = $father_name;
-        }
-        if (!empty($address)) {
-            $edit->current_address = $address;
-        }
-        if (!empty($permanent_address)) {
-            $edit->permanent_address = $permanent_address;
-        }
-        if (!empty($formalities)) {
-            $edit->formalities = $formalities;
-        }
-        if (!empty($offer_acceptance)) {
-            $edit->offer_acceptance = $offer_acceptance;
-        }
-        if (!empty($prob_period)) {
-            $edit->probation_period = $prob_period;
-        }
-        if (!empty($doc)) {
-            $edit->date_of_confirmation = $doc;
-        }
-        if (!empty($department)) {
-            $edit->department = $department;
-        }
-        if (!empty($salary)) {
-            $edit->salary = $salary;
-        }
-        if (!empty($account_number)) {
-            $edit->account_number = $account_number;
-        }
-        if (!empty($bank_name)) {
-            $edit->bank_name = $bank_name;
-        }
-        if (!empty($ifsc_code)) {
-            $edit->ifsc_code = $ifsc_code;
-        }
-        if (!empty($pf_account_number)) {
-            $edit->pf_account_number = $pf_account_number;
-        }
-        if (!empty($un_number)) {
-            $edit->un_number = $un_number;
-        }
-        if (!empty($pf_status)) {
-            $edit->pf_status = $pf_status;
-        }
-        if (!empty($dor)) {
-            $edit->date_of_resignation = $dor;
-        }
-        if (!empty($notice_period)) {
-            $edit->notice_period = $notice_period;
-        }
-        if (!empty($last_working_day)) {
-            $edit->last_working_day = $last_working_day;
-        }
-        if (!empty($full_final)) {
-            $edit->full_final = $full_final;
-        }
-
+        //$edit->photos       = (!empty($request->$filename)) ? $request->$filename : '/img/avatar.png';
+        $edit->code         = $request->code;
+        $edit->first_name   = $request->first_name;
+        $edit->middle_name  = $request->middle_name;
+        $edit->last_name    = $request->last_name;
+        $edit->suffix       = $request->suffix;
+        $edit->nickname     = $request->nickname;
+        $edit->job_title    = $request->job_title;
+        $edit->gender       = $request->gender;
+        $edit->status       = $request->status;
+        $edit->civil_status = $request->civil_status;
+        $edit->date_of_birth    = date_format(date_create($request->date_of_birth), 'Y-m-d');
+        $edit->date_of_joining  = date_format(date_create($request->date_of_joining), 'Y-m-d');
+        $edit->qualification    = $request->qualification;
+        $edit->primary_phone    = $request->primary_phone;
+        $edit->secondary_phone  = $request->secondary_phone;
+        $edit->work_email       = $request->work_email;
+        $edit->personal_email   = $request->personal_email;
+        $edit->contact_person   = $request->contact_person;
+        $edit->contact_person_relationship  = $request->contact_person_relationship;
+        $edit->contact_person_phone         = $request->contact_person_phone;
+        $edit->contact_person_alt_phone     = $request->contact_person_alt_phone;
+        $edit->sss_number           = $request->sss_number;
+        $edit->pagibig_number       = $request->pagibig_number;
+        $edit->philhealth_number    = $request->philhealth_number;
+        $edit->tin_number           = $request->tin_number;
+        $edit->health_insurance_number       = $request->health_insurance_number;
+        $edit->current_address      = $request->current_address;
+        $edit->permanent_address    = $request->permanent_address;
         $edit->save();
+
+        $request->session()->flash('success', 'Employee updated successfully!');
 
         // Update the user role
         $user_roles = UserRole::firstOrNew(['user_id' => $id]);
         $user_roles->role_id = $request->role;
         $user_roles->save();
 
-        return json_encode(['title' => 'Success', 'message' => 'Employee details successfully updated', 'class' => 'modal-header-success']);
+        return redirect()->back(); //json_encode(['title' => 'Success', 'message' => 'Employee details successfully updated', 'class' => 'modal-header-success']);
     }
 
     public function doDelete($id)
@@ -277,175 +185,64 @@ class EmpController extends Controller
         return view('hrms.employee.upload');
     }
 
+    /**
+     * Uploads an employee list.
+     *
+     * @param Request $request The uploaded file
+     */
     public function uploadFile(Request $request)
     {
         $files = Input::file('upload_file');
 
-        /* try {*/
         foreach ($files as $file) {
             Excel::load($file, function ($reader) {
-                $rows = $reader->get(['emp_name', 'emp_code', 'emp_status', 'role', 'gender', 'dob', 'doj', 'mob_number', 'qualification', 'emer_number', 'pan_number', 'father_name', 'address', 'permanent_address', 'formalities', 'offer_acceptance', 'prob_period', 'doc', 'department', 'salary', 'account_number', 'bank_name', 'ifsc_code', 'pf_account_number', 'un_number', 'pf_status', 'dor', 'notice_period', 'last_working_day', 'full_final']);
+                $rows = $reader->get(['code', 'biometric_id', 'first_name', 'middle_name', 'last_name', 'suffix', 'job_title', 'gender', 'date_of_birth', 'date_of_joining', 'primary_phone', 'secondary_phone', 'work_email', 'personal_email', 
+                    'contact_person', 'contact_person_phone', 'sss_number', 'pagibig_number', 'tin_number', 'philhealth_number', 'civil_status', 'current_address']);
 
                 foreach ($rows as $row) {
-\Log::info($row->role);
-                    $user           = new User;
-                    $user->name     = $row->emp_name;
-                    $user->email    = str_replace(' ', '_', $row->emp_name) . '@sipi-ip.sg';
-                    $user->password = bcrypt('123456');
-                    $user->save();
 
-                    $attachment         = new Employee();
-                    $attachment->photo  = '/img/Emp.jpg';
-                    $attachment->name   = $row->emp_name;
-                    $attachment->code   = $row->emp_code;
-                    $attachment->status = convertStatus($row->emp_status);
+                    // if has work or personal email, create user
+                    if ((strlen(trim($row->work_email)) > 0) || (strlen(trim($row->personal_email)) > 0)) {
 
-                    if (empty($row->gender)) {
-                        $attachment->gender = 'Not Exist';
-                    } else {
-                        $attachment->gender = $row->gender;
-                    }
-                    if (empty($row->dob)) {
-                        $attachment->date_of_birth = '0000-00-00';
-                    } else {
-                        $attachment->date_of_birth = date('Y-m-d',strtotime($row->dob));
-                    }
-                    if (empty($row->doj)) {
-                        $attachment->date_of_joining = '0000-00-00';
-                    } else {
-                        $attachment->date_of_joining = date('Y-m-d', strtotime($row->doj));
-                    }
-                    if (empty($row->mob_number)) {
-                        $attachment->number = '1234567890';
-                    } else {
-                        $attachment->number = $row->mob_number;
-                    }
-                    if (empty($row->qualification)) {
-                        $attachment->qualification = 'Not Exist';
-                    } else {
-                        $attachment->qualification = $row->qualification;
-                    }
-                    if (empty($row->emer_number)) {
-                        $attachment->emergency_number = '1234567890';
-                    } else {
-                        $attachment->emergency_number = $row->emer_number;
-                    }
-                    if (empty($row->pan_number)) {
-                        $attachment->pan_number = 'Not Exist';
-                    } else {
-                        $attachment->pan_number = $row->pan_number;
-                    }
-                    if (empty($row->father_name)) {
-                        $attachment->father_name = 'Not Exist';
-                    } else {
-                        $attachment->father_name = $row->father_name;
-                    }
-                    if (empty($row->address)) {
-                        $attachment->current_address = 'Not Exist';
-                    } else {
-                        $attachment->current_address = $row->address;
-                    }
-                    if (empty($row->permanent_address)) {
-                        $attachment->permanent_address = 'Not Exist';
-                    } else {
-                        $attachment->permanent_address = $row->permanent_address;
-                    }
-                    if (empty($row->emp_formalities)) {
-                        $attachment->formalities = '1';
-                    } else {
-                        $attachment->formalities = $row->emp_formalities;
-                    }
-                    if (empty($row->offer_acceptance)) {
-                        $attachment->offer_acceptance = '1';
-                    } else {
-                        $attachment->offer_acceptance = $row->offer_acceptance;
-                    }
-                    if (empty($row->prob_period)) {
-                        $attachment->probation_period = 'Not Exist';
-                    } else {
-                        $attachment->probation_period = $row->prob_period;
-                    }
-                    if (empty($row->doc)) {
-                        $attachment->date_of_confirmation = '0000-00-00';
-                    } else {
-                        $attachment->date_of_confirmation = date('Y-m-d', strtotime($row->doc));
-                    }
-                    if (empty($row->department)) {
-                        $attachment->department = 'Not Exist';
-                    } else {
-                        $attachment->department = $row->department;
-                    }
-                    if (empty($row->salary)) {
-                        $attachment->salary = '00000';
-                    } else {
-                        $attachment->salary = $row->salary;
-                    }
-                    if (empty($row->account_number)) {
-                        $attachment->account_number = 'Not Exist';
-                    } else {
-                        $attachment->account_number = $row->account_number;
-                    }
-                    if (empty($row->bank_name)) {
-                        $attachment->bank_name = 'Not Exist';
-                    } else {
-                        $attachment->bank_name = $row->bank_name;
-                    }
-                    if (empty($row->ifsc_code)) {
-                        $attachment->ifsc_code = 'Not Exist';
-                    } else {
-                        $attachment->ifsc_code = $row->ifsc_code;
-                    }
-                    if (empty($row->pf_account_number)) {
-                        $attachment->pf_account_number = 'Not Exist';
-                    } else {
-                        $attachment->pf_account_number = $row->pf_account_number;
-                    }
-                    if (empty($row->un_number)) {
-                        $attachment->un_number = 'Not Exist';
-                    } else {
-                        $attachment->un_number = $row->un_number;
-                    }
-                    if (empty($row->pf_status)) {
-                        $attachment->pf_status = '1';
-                    } else {
-                        $attachment->pf_status = $row->pf_status;
-                    }
-                    if (empty($row->dor)) {
-                        $attachment->date_of_resignation = '0000-00-00';
-                    } else {
-                        $attachment->date_of_resignation = date('Y-m-d', strtotime($row->dor));
-                    }
-                    if (empty($row->notice_period)) {
-                        $attachment->notice_period = 'Not exist';
-                    } else {
-                        $attachment->notice_period = $row->notice_period;
-                    }
-                    if (empty($row->last_working_day)) {
-                        $attachment->last_working_day = '0000-00-00';
-                    } else {
-                        $attachment->last_working_day = date('Y-m-d', strtotime($row->last_working_day));
-                    }
-                    if (empty($row->full_final)) {
-                        $attachment->full_final = 'Not exist';
-                    } else {
-                        $attachment->full_final = $row->full_final;
-                    }
-                    $attachment->user_id = $user->id;
-                    $attachment->save();
+                        // Create user access
+                        $user           = new User;
+                        $user->name     = sprintf('%s %s', $row->first_name, $row->last_name);
+                        $user->email    = (strlen(trim($row->work_email)) > 0) ? $row->work_email : $row->personal_email;
+                        $user->password = bcrypt('123456');
+                        $user->save();
 
-                    $userRole          = new UserRole();
-                    $userRole->role_id = convertRole($row->role);
-                    $userRole->user_id = $user->id;
-                    $userRole->save();
-
+                        /// Create employee record
+                        $attachment                     = new Employee();
+                        $attachment->code               = $row->code;
+                        $attachment->biometric_id       = $row->biometric_id;
+                        $attachment->first_name         = $row->first_name;
+                        $attachment->middle_name        = $row->middle_name;
+                        $attachment->last_name          = $row->last_name;
+                        $attachment->suffix             = $row->suffix;
+                        $attachment->job_title          = $row->job_title;
+                        $attachment->gender             = ($row->gender == 'male') ? 0: 1;
+                        $attachment->status             = ($row->status == 'Active') ? 1 : 0;
+                        $attachment->date_of_birth      = ($row->date_of_birth) ? $row->date_of_birth->toDateTimeString() : null;
+                        $attachment->date_of_joining    = ($row->date_of_joining) ? $row->date_of_joining->toDateTimeString() : null;
+                        $attachment->primary_phone      = $row->primary_phone;
+                        $attachment->secondary_phone    = $row->secondary_phone;
+                        $attachment->work_email         = $row->work_email;
+                        $attachment->personal_email     = $row->personal_email;
+                        $attachment->contact_person     = $row->contact_person;
+                        $attachment->contact_person_phone  = $row->contact_person_phone;
+                        $attachment->sss_number         = $row->sss_number;
+                        $attachment->pagibig_number     = $row->pagibig_number;
+                        $attachment->tin_number         = $row->tin_number;
+                        $attachment->philhealth_number  = $row->philhealth_number;
+                        $attachment->civil_status       = $row->civil_status;
+                        $attachment->current_address    = $row->current_address;
+                        $attachment->photo              = '/img/avatar.png';
+                        $attachment->user_id            = $user->id;
+                        $attachment->save();
+                    }
                 }
-                return 1;
-                //return redirect('upload_form');*/
             });
-
         }
-        /*catch (\Exception $e) {
-           return $e->getMessage();*/
 
         \Session::flash('success', ' Employee details uploaded successfully.');
 
