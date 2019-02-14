@@ -2,10 +2,12 @@
 /build/logs
 /build/coverage
 /node_modules
+/storage/debugbar
 /vendor
 
 /.idea
 /_ide_helper.php
 
 .DS_Store
+/.vagrant
 .env
