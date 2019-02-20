@@ -13,7 +13,6 @@
                             <span class="panel-title">{{$details->name}}</span>
                         </div>
                         <div class="panel-body pn pb5 text-center">
-                            <hr class="short br-lighter">
                             <img src="{{($details->photo) ? $details->photo : '/assets/img/avatars/profile_pic.png'}}" width="80px" height="80px" class="img-circle img-thumbnail" alt="User Image">
 
                         </div>
@@ -25,54 +24,7 @@
                     </div>
                 </div>
 
-                <div class="box box-success">
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <span class="panel-title">Bank Details</span>
-                        </div>
-                        <div class="panel-body pn pb5">
-                            <hr class="short br-lighter">
 
-                            <div class="box-body no-padding">
-                                <table class="table">
-                                    <tbody>
-                                    <tr>
-                                        <td style="width: 10px" class="text-center"><i class="fa fa-credit-card"></i></td>
-                                        <td><strong>Account Number</strong></td>
-                                        <td>{{$details->account_number}}</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px" class="text-center"><i class="fa fa-tags"></i></td>
-                                        <td><strong>Pf Account Number</strong></td>
-                                        <td>{{$details->pf_account_number}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px" class="text-center"><i class="fa fa-bank"></i></td>
-                                        <td><strong>Bank Name</strong></td>
-                                        <td>{{$details->bank_name}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px" class="text-center"><i class="fa fa-code"></i></td>
-                                        <td><strong>Ifsc Code</strong></td>
-                                        <td>{{$details->ifsc_code}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px" class="text-center"><i class="fa fa-tags"></i></td>
-                                        <td><strong>Un Number</strong></td>
-                                        <td>{{$details->un_number}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5">
                 <div class="box box-success">
                     <div class="panel">
 
@@ -80,11 +32,7 @@
                             <span class="panel-title">Personal Details</span>
                         </div>
                         <div class="panel-body pn pb5">
-                            <hr class="short br-lighter">
-
-
                             <div class="box-body no-padding">
-
                                 <table class="table">
                                     <tbody>
                                     <tr>
@@ -137,13 +85,12 @@
                         </div>
 
                     </div>
-
                 </div>
             </div>
 
             <div class="col-md-3 pull-right">
-                <div class="small-box bg-black">
-                    <div class="inner datebar" align="center">
+                <div class="small-box">
+                    <div class="inner datebar bg-black" align="center">
                         <p style="color:ghostwhite">{{\Carbon\Carbon::now()->format('l, jS \\of F, Y')}}</p>
                         <h3 style="color: ghostwhite" id="clock"></h3>
                         <br/>
@@ -159,7 +106,6 @@
                             <span class="panel-title"> Events </span>
                         </div>
                         <div class="panel-body pn pb5">
-                            <hr class="short br-lighter">
                                 @foreach (array_chunk($events, 3, true) as $results)
                                     <table class="table">
                                         @foreach($results as $event)
@@ -188,8 +134,6 @@
                             <span class="panel-title">Employment Details</span>
                         </div>
                         <div class="panel-body pn pb5">
-                            <hr class="short br-lighter">
-
                             <div class="box-body no-padding">
                                 <table class="table">
                                     <tbody>
@@ -231,6 +175,39 @@
                     </div>
 
                 </div>
+
+                <div class="box box-success">
+                    <div class="panel">
+
+                        <div class="panel-heading">
+                            <span class="panel-title">Leave Balances</span>
+                        </div>
+                        <div class="panel-body pn pb5">
+                            <div class="box-body no-padding">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Vacation Leave</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sick Leave</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Birthday Leave</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
                     </div>
             </div>

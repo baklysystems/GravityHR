@@ -44,8 +44,7 @@ class User extends Authenticatable
     {
         $userId = Auth::user()->id;
         $userRole = UserRole::where('user_id', $userId)->first();
-        if($userRole->role_id == 7 || $userRole->role_id == 1)
-        {
+        if (isset($userRole) && ($userRole->role_id == 1 || $userRole->role_id == 2)) {
             return true;
         }
         return false;
@@ -55,8 +54,7 @@ class User extends Authenticatable
     {
         $userId = Auth::user()->id;
         $userRole = UserRole::where('user_id', $userId)->first();
-        if($userRole->role_id != 3)
-        {
+        if (isset($userRole) && $userRole->role_id != 3) {
             return true;
         }
         return false;
@@ -67,8 +65,7 @@ class User extends Authenticatable
         $userId = Auth::user()->id;
         $userRole = UserRole::where('user_id', $userId)->first();
         $roleIds = [2,5,7,8,9,10,14,16];
-        if(in_array($userRole->role_id, $roleIds) )
-        {
+        if (isset($userRole) && in_array($userRole->role_id, $roleIds)) {
             return true;
         }
         return false;
@@ -78,8 +75,7 @@ class User extends Authenticatable
     {
         $userId = Auth::user()->id;
         $userRole = UserRole::where('user_id', $userId)->first();
-        if($userRole->role_id == 16)
-        {
+        if (isset($userRole) && $userRole->role_id == 3) {
             return true;
         }
         return false;

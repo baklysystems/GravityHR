@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Event;
+use App\Models\LeaveBalances;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,10 @@ class ProfileController extends Controller
 
         $details = Employee::where('user_id', \Auth::user()->id)->with('userrole.role')->first();
         $events = $this->convertToArray(Event::where('date', '>', Carbon::now())->orderBy('date','desc')->take(3)->get());
-        return view('hrms.profile', compact('details','events'));
+        $leave_balances = LeaveBalances::where('user_id', \Auth::user()->id);
+
+        //dd($leave_balances);
+        return view('hrms.profile', compact('details','events', 'leave_balances'));
     }
     public function convertToArray($values)
     {

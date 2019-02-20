@@ -237,6 +237,16 @@
       return redirect()->back();
     }
 
+
+    /**
+     * Shows the leave balance for the employee.
+     */
+    public function showLeaveBalances()
+    {
+      $leaves = EmployeeLeaves::where('user_id', \Auth::user()->id);
+      //return view('hrms.leave.show_my_leaves', compact('leaves'));
+    }
+
     function wordsToNumber($data)
     {
       // Replace all number words with an equivalent numeric value
