@@ -239,6 +239,12 @@ class EmpController extends Controller
                         $attachment->photo              = '/img/avatar.png';
                         $attachment->user_id            = $user->id;
                         $attachment->save();
+
+                        // Create default role (Employee Role)
+                        $user_roles = new UserRole();
+                        $user_roles->user_id = $user->id;
+                        $user_roles->role_id = 4;
+                        $user_roles->save();
                     }
                 }
             });

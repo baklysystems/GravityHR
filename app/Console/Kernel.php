@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         // Commands\Inspire::class,
-        \App\Console\Commands\Wish::class
+        \App\Console\Commands\Wish::class,
+        \App\Console\Commands\AllocateLeaveCreditsCommand::class
     ];
 
     /**

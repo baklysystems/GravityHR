@@ -17,7 +17,7 @@ class CreateLeaveBalancesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('leave_type_id')->unsigned();
             $table->smallInteger('used')->unsigned()->default(0);
-            $table->smallInteger('balance')->unsigned()->default(0);
+            $table->smallInteger('allocated')->unsigned()->default(0);
             $table->smallInteger('carried_over')->unsigned()->default(0);
             $table->smallInteger('year')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

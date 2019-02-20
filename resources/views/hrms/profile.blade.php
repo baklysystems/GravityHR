@@ -188,15 +188,15 @@
                                     <tbody>
                                         <tr>
                                             <td>Vacation Leave</td>
-                                            <td>1</td>
+                                            <td>{{ $leave_balances[0]->allocated - $leave_balances[0]->used }}</td>
                                         </tr>
                                         <tr>
                                             <td>Sick Leave</td>
-                                            <td>2</td>
+                                            <td>{{ $leave_balances[1]->allocated - $leave_balances[1]->used }}</td>
                                         </tr>
                                         <tr>
                                             <td>Birthday Leave</td>
-                                            <td>1</td>
+                                            <td>{{ $leave_balances[2]->allocated - $leave_balances[2]->used }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
