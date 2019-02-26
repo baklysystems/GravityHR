@@ -26,7 +26,7 @@
                     <div class="panel">
 
                         <div class="panel-heading">
-                            <span class="panel-title">Personal Info</span>
+                            <span class="panel-title">Personal Detail</span>
                         </div>
                         <div class="panel-body pn pb5">
                             <div class="box-body no-padding">
