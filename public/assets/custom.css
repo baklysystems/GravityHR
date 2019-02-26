@@ -10,7 +10,7 @@
     position: relative;
     border-radius: 3px;
     background: #ffffff;
-    border-top: 3px solid #d2d6de;
+    /* border-top: 3px solid #d2d6de; */
     margin-bottom: 20px;
     width: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -121,3 +121,25 @@
     color: #c3c4cb;
     font-size: 12px;
 }
+
+.profbox-empname .prof-name{
+    color: .C32427;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.profbox-empname .prof-dept,
+.profbox-empname .emp-ID {
+		color: #5C6877;
+		font-size: 14px;
+}
+
+.profbox{
+
+}
+
+
+
+
+
+

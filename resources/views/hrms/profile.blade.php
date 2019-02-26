@@ -3,11 +3,9 @@
 @section('content')
 
     <section id="content" class="animated fadeIn">
-
         <div class="row">
-
             <div class="col-md-4">
-                <div class="box box-success">
+                <div class="box box-success profbox-empname">
                     <div class="panel">
                         <div class="panel-heading text-center">
                             <span class="panel-title">{{$details->name}}</span>
@@ -16,16 +14,15 @@
                             <img src="{{($details->photo) ? $details->photo : '/assets/img/avatars/profile_pic.png'}}" width="80px" height="80px" class="img-circle img-thumbnail" alt="User Image">
 
                         </div>
-                        <p class="text-center no-margin">{{$details->userrole->role->name}}</p>
-                        <p class="small text-center no-margin"><span class="text-muted">Department:</span> {{$details->department}}</p>
-                        <p class="small text-center no-margin"><span class="text-muted">Employee ID:</span> {{$details->code}}</p>
-
-
+                        <p class="text-center no-margin prof-name">{{$details->userrole->role->name}}</p>
+											
+                        <p class="small text-center no-margin prof-dept"><span class="text-muted">Department:</span> {{$details->department}}</p>
+                        <p class="small text-center no-margin emp-ID"><span class="text-muted">Employee ID:</span> {{$details->code}}</p>
                     </div>
                 </div>
 
 
-                <div class="box box-success">
+                <div class="box box-success profbox">
                     <div class="panel">
 
                         <div class="panel-heading">
@@ -33,7 +30,7 @@
                         </div>
                         <div class="panel-body pn pb5">
                             <div class="box-body no-padding">
-                                <table class="table">
+                                <table class="table table-striped">
                                     <tbody>
                                     <tr>
                                         <td style="width: 10px" class="text-center"><i class="fa fa-birthday-cake"></i>
@@ -128,7 +125,7 @@
             </div>
             @endif
             <div class="col-md-5">
-                <div class="box box-success">
+                <div class="box box-success profbox">
                     <div class="panel">
                         <div class="panel-heading">
                             <span class="panel-title">Employment Details</span>
@@ -176,7 +173,7 @@
 
                 </div>
 
-                <div class="box box-success">
+                <div class="box box-success profbox">
                     <div class="panel">
 
                         <div class="panel-heading">

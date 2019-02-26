@@ -42,6 +42,7 @@
 
     <!-- Sweet alert -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/sweetalert.css') }}">
+    
 
 @stack('styles')
 
@@ -255,11 +256,11 @@
             @include('hrms.layouts.sidebar')
 
             <!-- -------------- Sidebar Hide Button -------------- -->
-            <div class="sidebar-toggler">
+            <!-- <div class="sidebar-toggler">
                 <a href="#">
                     <span class="fa fa-arrow-circle-o-left"></span>
                 </a>
-            </div>
+            </div> -->
             <!-- -------------- /Sidebar Hide Button -------------- -->
 
         </div>
