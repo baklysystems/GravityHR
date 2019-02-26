@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www/html":{"group":"www-data","user":"vagrant","guestpath":"/var/www/html","hostpath":"/Users/suitedconnectorbpo/Sites/GravityHR","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/suitedconnectorbpo/Sites/GravityHR","disabled":false,"__vagrantfile":true}}}

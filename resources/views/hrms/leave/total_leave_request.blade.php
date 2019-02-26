@@ -41,38 +41,44 @@
                         <div class="panel-menu allcp-form theme-primary mtn">
                             <div class="row">
                                 {!! Form::open() !!}
-                                <div class="col-md-3">
-                                    <input type="text" class="field form-control" placeholder="query string" style="height:40px" name="string" value="{{$string}}">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="field select">
-                                        {!! Form::select('column', getLeaveColumns(),$column) !!}
-                                        <i class="arrow double"></i>
-                                    </label>
-                                </div>
 
-                                <div class="col-md-3">
-                                    <input type="text" id="datepicker1" class="select2-single form-control"
-                                           name="dateFrom" value="{{$dateFrom}}" placeholder="date from"/>
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" id="datepicker4" class="select2-single form-control"
-                                           name="dateTo" value="{{$dateTo}}" placeholder="date to"/>
-                                </div>
+                                <div class="col-lg-8 col-md-12 col-sm-6">
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="text" class="field form-control" placeholder="query string" style="height:40px" name="string" value="{{$string}}">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="field select">
+                                            {!! Form::select('column', getLeaveColumns(),$column) !!}
+                                            <i class="arrow double"></i>
+                                        </label>
+                                    </div>
 
-                                <div class="col-md-2"><br />
-                                    <input type="submit" value="Search" name="button" class="btn btn-primary">
+                                    <div class="col-md-3">
+                                        <input type="text" id="datepicker1" class="select2-single form-control"
+                                               name="dateFrom" value="{{$dateFrom}}" placeholder="date from"/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" id="datepicker4" class="select2-single form-control"
+                                               name="dateTo" value="{{$dateTo}}" placeholder="date to"/>
+                                    </div>
+                                  </div>
                                 </div>
+                                <div class="col-lg-4 col-md-12 col-sm-6">
+                                  <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="submit" value="Search" name="button" class="btn btn-primary btn-block">
+                                    </div>
 
-                                <div class="col-md-2"><br />
-                                    <input type="submit" value="Export" name="button" class="btn btn-success">
+                                    <div class="col-md-4">
+                                        <input type="submit" value="Export" name="button" class="btn btn-success btn-block">
+                                    </div>
+                                    {!! Form::close() !!}
+                                    <div class="col-md-4">
+                                        <input href="/total-leave-list" type="submit" value="Reset" class="btn btn-warning btn-block">
+                                    </div>
+                                  </div>
                                 </div>
-                                {!! Form::close() !!}
-                                <div class="col-md-2"><br />
-                                    <a href="/total-leave-list" >
-                                        <input type="submit" value="Reset" class="btn btn-warning"></a>
-                                </div>
-
                             </div>
                         </div>
                         <div class="panel-body pn">
