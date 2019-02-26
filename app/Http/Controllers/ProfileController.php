@@ -16,9 +16,8 @@ class ProfileController extends Controller
 
         $details = Employee::where('user_id', \Auth::user()->id)->with('userrole.role')->first();
         $events = $this->convertToArray(Event::where('date', '>', Carbon::now())->orderBy('date','desc')->take(3)->get());
-        $leave_balances = LeaveBalances::where('user_id', \Auth::user()->id);
+        $leave_balances = LeaveBalances::where('user_id', \Auth::user()->id)->get();
 
-        //dd($leave_balances);
         return view('hrms.profile', compact('details','events', 'leave_balances'));
     }
     public function convertToArray($values)
