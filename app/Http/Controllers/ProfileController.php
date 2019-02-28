@@ -12,7 +12,8 @@ use App\Http\Requests;
 
 class ProfileController extends Controller
 {
-    public function show(){
+    public function show()
+    {
 
         $details = Employee::where('user_id', \Auth::user()->id)->with('userrole.role')->first();
         $events = $this->convertToArray(Event::where('date', '>', Carbon::now())->orderBy('date','desc')->take(3)->get());
@@ -20,6 +21,7 @@ class ProfileController extends Controller
 
         return view('hrms.profile', compact('details','events', 'leave_balances'));
     }
+    
     public function convertToArray($values)
     {
         $result = [];
