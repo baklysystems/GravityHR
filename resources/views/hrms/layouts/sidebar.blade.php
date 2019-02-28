@@ -1,5 +1,5 @@
 <!-- -------------- Sidebar - Author -------------- -->
-<div class="sidebar-widget author-widget">
+ <!-- <div class="sidebar-widget author-widget">
     <div class="media">
         <a href="/profile" class="media-left">
             @if(Auth::user()->employee->photo)
@@ -13,6 +13,16 @@
         <div class="media-body">
             <div class="media-author"><a href="/profile">{{Auth::user()->name}}</a></div>
         </div>
+    </div>
+</div>  -->
+
+<div class="sidebar-widget author-widget">
+    <div class="media">
+      
+                <img src="{{ URL::asset('assets/img/grav_logo.png') }}" class="img-responsive center-block">
+          
+
+       
     </div>
 </div>
 
@@ -363,6 +373,6 @@
             <span class="sidebar-title"> Company Policy </span>
         </a>
     </li>
-    <p> &nbsp; </p>
+    <!-- <p> &nbsp; </p> -->
 </ul>
 <!-- -------------- /Sidebar Menu  -------------- -->

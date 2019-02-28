@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www/html":{"group":"www-data","user":"vagrant","guestpath":"/var/www/html","hostpath":"/Users/justinmchood/Sites/L5-HRMS","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/justinmchood/Sites/L5-HRMS","disabled":false,"__vagrantfile":true}}}
