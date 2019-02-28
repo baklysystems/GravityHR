@@ -11,7 +11,7 @@
 				</li>
 				{{--
 				<li class="breadcrumb-active">
-					<a href="#"> Edit Detailss</a>
+					<a href="#"> Edit Details</a>
 				</li>--}}
 				<li class="breadcrumb-link">
 					<a href="/dashboard"> Employees </a>
