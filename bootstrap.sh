@@ -115,7 +115,12 @@ php artisan key:generate
 # Installing node modules
 sudo npm install
 
+# Installing composer libraries
+composer install
+
 # echo "Migrate Databases"
-# php artisan migrate
+php artisan migrate
+php artisan db:seed
+php artisan hris:allocate-leave-credits
 
 echo "Finished provisioning."
