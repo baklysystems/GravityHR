@@ -46,7 +46,6 @@
 					<div class="panel">
 						<form method="post" action="/edit-emp/3">
 							<input name="_token" id="token" type="hidden" value="{{ csrf_token() }}" />
-							
 
 							<div class="row">
 								<div class="col-md-12">
@@ -557,8 +556,6 @@
 						
 
 							<input value="Save Employee Details" type="submit" class="btn btn-primary"/>
-
-
 						</form>
 					</div>
 				</div>
@@ -567,4 +564,3 @@
 
 	</section>
 </div> {{-- end content --}}
-@endsection
