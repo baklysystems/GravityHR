@@ -32,60 +32,60 @@
 </head>
 
 <body class="utility-page sb-l-c sb-r-c">
-
 <!-- -------------- Body Wrap  -------------- -->
 <div id="main" class="animated fadeIn">
 
     <!-- -------------- Main Wrapper -------------- -->
     <section id="content_wrapper">
 
-        <div id="canvas-wrapper">
-            <canvas id="demo-canvas"></canvas>
-        </div>
-
         <!-- -------------- Content -------------- -->
         <section id="content">
 
             <!-- -------------- Login Form -------------- -->
-            <div class="allcp-form theme-primary mw320" id="login">
-                <div class="bg-primary text-center mb20 br3 pv15">
-                <span style="color:#FFFFFF"><strong><u>H</u>uman <u>R</u>esource <u>M</u>anagement <u>S</u>ystem</strong></span>
+            <div class="allcp-form theme-primary mw400" id="login">
+              <div class="cus-wrap-1">
+                <div class="red-block">
+                    <img src="../assets/img/icon-logo.png" alt="">
                 </div>
-                <div class="panel mw320">
+                <div class="panel mw400">
+                  <h3>Human Resource Management System</h3>
+                      {!! Form::open() !!}
+                          <div class="panel-body pn mv10">
+                                  @if (session('message'))
+                                      <div class="alert {{session('class')}}">
+                                          {{ session('message') }}
+                                      </div>
+                                  @endif
+                              <div class="section">
+                                  <label for="username" class="field prepend-icon">
+                                      <input type="text" name="email" id="email" class="gui-input" placeholder="Email">
+                                  </label>
+                              </div>
+                              <!-- -------------- /section -------------- -->
 
-                    {!! Form::open() !!}
-                        <div class="panel-body pn mv10">
-                                @if (session('message'))
-                                    <div class="alert {{session('class')}}">
-                                        {{ session('message') }}
-                                    </div>
-                                @endif
-                            <div class="section">
-                                <label for="username" class="field prepend-icon">
-                                    <input type="text" name="email" id="email" class="gui-input" placeholder="Email">
-                                </label>
-                            </div>
-                            <!-- -------------- /section -------------- -->
+                              <div class="section">
+                                  <label for="password" class="field prepend-icon">
+                                      <input type="password" name="password" id="password" class="gui-input" placeholder="Password">
+                                  </label>
+                              </div>
+                              <!-- -------------- /section -------------- -->
 
-                            <div class="section">
-                                <label for="password" class="field prepend-icon">
-                                    <input type="password" name="password" id="password" class="gui-input" placeholder="Password">
-                                </label>
-                            </div>
-                            <!-- -------------- /section -------------- -->
+                              <div class="section">
+                                  <div class="pull-left pt5">
+                                          <a href="/reset-password">Reset Password</a>
+                                  </div>
+                                  <button type="submit" class="btn btn-bordered btn-primary pull-right">Log in</button>
+                              </div>
+                              <!-- -------------- /section -------------- -->
 
-                            <div class="section">
-                                <div class="pull-left pt5">
-                                        <a href="/reset-password">Reset Password</a>
-                                </div>
-                                <button type="submit" class="btn btn-bordered btn-primary pull-right">Log in</button>
-                            </div>
-                            <!-- -------------- /section -------------- -->
-
-                        </div>
-                        <!-- -------------- /Form -------------- -->
-                    {!! Form::close() !!}
+                          </div>
+                          <!-- -------------- /Form -------------- -->
+                      {!! Form::close() !!}
+                  </div>
                 </div>
+
+
+
                 <!-- -------------- /Panel -------------- -->
             </div>
             <!-- -------------- /Spec Form -------------- -->

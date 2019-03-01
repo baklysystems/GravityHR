@@ -26,6 +26,55 @@
   -webkit-animation-duration: 2s !important;
   animation-duration: 2s !important;
 }
+
+/* Additional CSS */
+
+.red-block{
+  background: #C32427;
+  height: 80px;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+}
+
+.red-block img{
+  position: relative;
+  z-index: 100;
+  margin-top: 20px;
+}
+
+.allcp-form .panel{
+  border-top: 0 !important;
+}
+
+.cus-wrap-1 .panel{
+  border-radius: 0 0 4px 4px;
+}
+.cus-wrap-1 h3{
+  font-size: 18px;
+  text-align: center;
+  margin: 50px 0 30px;
+}
+
+.cus-wrap-1 a{
+  color: #5C6877;
+}
+
+.cus-wrap-1 a:hover{
+  color: #C32427;
+}
+
+.cus-wrap-1 input:hover{
+  border-color: #5C6877 !important;
+}
+
+.cus-wrap-1 .btn-primary{
+  background: #C32427 !important;
+}
+.cus-wrap-1 .btn-primary:hover{
+  border-color: #A31E21 !important;
+}
+
+
 /*
     Animate.css - http://daneden.me/animate
     Licensed under the MIT license - http://opensource.org/licenses/MIT
@@ -20695,7 +20744,7 @@ body.utility-page {
 }
 body.utility-page #main {
   overflow: hidden;
-  background: url("../../../img/patterns/backgrounds/1.jpg") no-repeat top center #2d494d;
+  background: #F1F4F9;
 }
 body.utility-page #main:before {
   display: none;
@@ -20715,9 +20764,6 @@ body.utility-page #content .allcp-form {
   max-width: 800px;
   margin: 0 auto;
   margin-top: 8%;
-}
-body.utility-page #content .panel {
-  box-shadow: 0 1px 40px 0 rgba(0, 0, 0, 0.3);
 }
 body.utility-page #content .panel-heading {
   padding: 32px 10px 15px;
