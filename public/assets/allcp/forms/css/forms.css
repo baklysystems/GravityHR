@@ -4128,3 +4128,9 @@
 .allcp-form.theme-warning .wizard .steps li.current a {
   background-color: #f4af22;
 }
+
+
+label.error {
+  margin-bottom: 3px;
+  color: #dc3545;
+}

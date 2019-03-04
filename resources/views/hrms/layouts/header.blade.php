@@ -1,7 +1,7 @@
-<header class="navbar navbar-fixed-top bg-system">
-	<div class="navbar-logo-wrapper bg-system">
+<header class="navbar navbar-fixed-top bg-dark">
+	<div class="navbar-logo-wrapper dark bg-dark">
 		<a class="navbar-logo-text" href="#">
-			<b> GravityBPO </b>
+			<b> GravityBPO</b>
 		</a>
 
 		<span id="sidebar_left_toggle" class="ad ad-lines"></span>
