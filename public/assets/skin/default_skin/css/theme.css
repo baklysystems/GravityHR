@@ -9859,7 +9859,7 @@ output {
   transition: border-color ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #91dfe9;
+  border-color: #cccccc;
   outline: 0;
 }
 .form-control::-moz-placeholder {
@@ -10754,7 +10754,7 @@ tbody.collapse.in {
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #67d3e0;
+  color: #1e1e1e;
   background-color: transparent;
 }
 .bg-dark .dropdown-menu > li > a:hover,
@@ -21167,7 +21167,7 @@ body.error-404 #search-widget {
   color: #999;
 }
 .bg-primary {
-  background-color: #67d3e0 !important;
+  background-color: #484848 !important;
   color: #ffffff;
 }
 a.bg-primary:hover {
@@ -21810,8 +21810,8 @@ fieldset[disabled] .btn-info:active,
 .btn-info.disabled.active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
-  background-color: #4fd8b0;
-  border-color: #4fd8b0;
+  background-color: #1e1e1e;
+  border-color: #1e1e1e;
 }
 .btn-info .badge {
   color: #4fd8b0;
@@ -22079,7 +22079,7 @@ fieldset[disabled] .btn-system.active {
 }
 .btn-dark {
   color: #ffffff;
-  background-color: #2a2f43;
+  background-color: #1e1e1e;
 }
 .btn-dark:hover,
 .btn-dark:focus,

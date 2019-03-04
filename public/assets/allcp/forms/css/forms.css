@@ -1414,7 +1414,7 @@
 .allcp-form.theme-primary .gui-input:focus,
 .allcp-form.theme-primary .select > select:focus,
 .allcp-form.theme-primary .select-multiple select:focus {
-  outline-color: #67d3e0;
+  outline-color: #cccccc;
 }
 .stepper-wrap {
   position: relative;
@@ -3327,15 +3327,15 @@
   border-color: #4fd8b0;
 }
 .allcp-form .btn-info {
-  background-color: #4fd8b0;
+  background-color: #cb2122;
 }
 .allcp-form .btn-info:hover,
 .allcp-form .btn-info:focus {
-  background-color: #4fc1e9;
-  border-color: #4fc1e9;
+  background-color: #111111;
+  border-color: #111111;
 }
 .allcp-form .btn-info:active {
-  background-color: #27a0cc;
+  background-color: #111111;
 }
 .allcp-form .btn-info,
 .allcp-form .btn-info:hover,
@@ -3496,12 +3496,12 @@
   border-color: #67d3e0;
 }
 .allcp-form .btn-primary {
-  background-color: #67d3e0;
+  background-color: #1e1e1e;
 }
 .allcp-form .btn-primary:hover,
 .allcp-form .btn-primary:focus {
-  background-color: #4ea5e0;
-  border-color: #4ea5e0;
+  background-color: #111111;
+  border-color: #111111;
 }
 .allcp-form .btn-primary:active {
   background-color: #2489cc;
@@ -3551,7 +3551,7 @@
 .allcp-form.theme-primary .gui-input:hover ~ .input-footer,
 .allcp-form.theme-primary .file .gui-file:hover + .gui-input,
 .allcp-form.theme-primary .gui-textarea:hover ~ .input-footer {
-  border-color: #67d3e0;
+  border-color: #cccccc;
 }
 .allcp-form.theme-primary .gui-input:focus,
 .allcp-form.theme-primary .gui-textarea:focus,
@@ -3665,12 +3665,12 @@
   border-color: #c3d62d;
 }
 .allcp-form .btn-success {
-  background-color: #c3d62d;
+  background-color: #cb2122;
 }
 .allcp-form .btn-success:hover,
 .allcp-form .btn-success:focus {
-  background-color: #87d37c;
-  border-color: #87d37c;
+  background-color: #1e1e1e;
+  border-color: #1e1e1e;
 }
 .allcp-form .btn-success:active {
   background-color: #58c249;
