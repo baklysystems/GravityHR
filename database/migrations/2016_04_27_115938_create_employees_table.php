@@ -57,7 +57,11 @@ class CreateEmployeesTable extends Migration
             //$table->string('pf_account_number');
             //$table->string('un_number');
             //$table->tinyInteger('pf_status');
+            $table->integer('shift_id')->unsigned();
+            //$table->foreign('shift_id')->references('id')->on('shift_managers')->onDelete('cascade');
             $table->date('date_of_resignation')->nullable();
+            $table->integer('reporting_to')->unsigned();
+            //$table->foreign('reporting_to')->references('id')->on('users')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
