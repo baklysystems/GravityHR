@@ -841,16 +841,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.83",
+            "version": "v0.87",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "f443f4107d9ba001dad60d18cf1ec0cf0e7234f9"
+                "reference": "26e0bf604e0b6e253f5217ef7e7fe39d976a69f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/f443f4107d9ba001dad60d18cf1ec0cf0e7234f9",
-                "reference": "f443f4107d9ba001dad60d18cf1ec0cf0e7234f9",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/26e0bf604e0b6e253f5217ef7e7fe39d976a69f7",
+                "reference": "26e0bf604e0b6e253f5217ef7e7fe39d976a69f7",
                 "shasum": ""
             },
             "require": {
@@ -874,7 +874,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-01-30T22:06:40+00:00"
+            "time": "2019-02-25T00:22:55+00:00"
         },
         {
             "name": "google/auth",
