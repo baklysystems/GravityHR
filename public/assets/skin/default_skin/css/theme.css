@@ -8249,13 +8249,13 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #67d3e0;
+  color: #1e1e1e;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2abed0;
-  text-decoration: underline;
+  color: #cb2122;
+  text-decoration: underline !important;
 }
 a:focus {
   outline: 0;
@@ -10737,8 +10737,8 @@ tbody.collapse.in {
   white-space: nowrap;
 }
 .bg-dark .dropdown-menu {
-  background-color: #2a2f43;
-  border: 1px solid #2a2f43;
+  background-color: #1e1e1e;
+  border: 1px solid #1e1e1e;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -11218,7 +11218,7 @@ select[multiple] .input-group-sm > .input-group-btn > .btn {
   background-color: #eeeeee;
 }
 .nav > li > a name {
-  color: #67d3e0;
+  color: #ffffff;
   padding-left: 5px;
 }
 .nav > li.disabled > a {
@@ -12016,7 +12016,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .breadcrumb > li + li:not(.breadcrumb-active) + li:before {
   content: "/\00a0";
   padding: 0;
-  color: #67d3e0;
+  color: #888888;
 }
 .breadcrumb > .active {
   color: #777777;
@@ -16959,7 +16959,7 @@ ol.timeline-list li.timeline-item .timeline-date {
   min-width: 700px !important;
 }
 .mnw1000 {
-  min-width: 1000px !important;
+  min-width: 1000px !important;©
 }
 .list-spacing-3 li + li {
   padding-top: 3px;
@@ -17706,7 +17706,7 @@ body.sidebar-collapsed #sidebar:before {
   transition: background-color 0.4s ease;
 }
 .navbar .dropdown-menu > li.dropdown-footer a:hover {
-  background-color: #2abed0;
+  background-color: #cb2122;
   color: #ffffff;
 }
 .navbar .nav > li.dropdown .panel-heading {
@@ -18188,7 +18188,7 @@ body.sb-top #sidebar_top_toggle {
 .navbar.bg-dark .nav > li > a:hover,
 .navbar.bg-dark .nav > li > a:focus {
   color: #FFF;
-  background-color: #2a2f43;
+  background-color: #272727;
 }
 .navbar.bg-dark .nav > li.dropdown.open .dropdown-menu,
 .navbar.bg-dark .nav > li.dropdown .open .dropdown-menu {
@@ -20237,7 +20237,7 @@ body.sb-l-m.mobile-view .nano > .nano-pane {
   background-color: transparent;
 }
 .breadcrumb > li {
-  color: #67d3e0;
+  color: #888888;
 }
 .breadcrumb > li.breadcrumb-icon {
   margin-right: 12px;
