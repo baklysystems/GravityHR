@@ -8255,7 +8255,7 @@ a {
 a:hover,
 a:focus {
   color: #cb2122;
-  text-decoration: underline !important;
+  text-decoration: none;
 }
 a:focus {
   outline: 0;
@@ -11245,6 +11245,7 @@ select[multiple] .input-group-sm > .input-group-btn > .btn {
 }
 .nav > li > a > img {
   max-width: none;
+  border-radius: 100%;
 }
 .nav-tabs {
   border-bottom: 1px solid #dddddd;
