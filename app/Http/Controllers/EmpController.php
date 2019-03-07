@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Jobs\ExportData;
 use App\Models\Employee;
 use App\Models\EmployeeUpload;
+use App\Models\Event;
+use App\Models\LeaveBalances;
 use App\Models\Role;
 use App\Models\UserRole;
 use App\Promotion;
@@ -92,7 +94,19 @@ class EmpController extends Controller
 
     }
 
-    public function showEmployee()
+    public function showEmployee($id)
+    {
+        $details = Employee::where('user_id', $id)->with('userrole.role')->first();
+        $leave_balances = LeaveBalances::where('user_id', $id)->get();
+
+        $ev = Event::where('date', '>', Carbon::now())->orderBy('date','desc')->take(3)->get();
+        $events = [];
+        foreach($ev as $key => $value) $events[$key] = $value;
+
+        return view('hrms.profile', compact('details','events', 'leave_balances'));
+    }
+
+    public function listEmployees()
     {
         $emps   = User::with('employee', 'role.role')->paginate(15);
         $column = '';
