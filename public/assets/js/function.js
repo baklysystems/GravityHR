@@ -299,61 +299,6 @@ $('#passwordForm').submit(function (event) {
 
 });
 
-$('#create-event').click(function () {
-    $('#status-section').removeClass('hidden');
-    var name = $('#event_name').val();
-    var coordinator = $('#event_cordinater').val();
-    var attendees = $('#event_attendees').val();
-    var date = $('#date_time').val();
-    var message = $('#event_description').val();
-    var token = $('#token').val();
-
-    $.post('create-event', {
-        'name': name,
-        'coordinator': coordinator,
-        'attendees': attendees,
-        'date': date,
-        'message': message,
-        '_token': token
-    }, function (data) {
-        $('#status-section').addClass('hidden');
-        $('#message-section').removeClass('hidden');
-        var parsed = JSON.parse(data);
-
-        if (parsed === 'success') {
-            alert(parsed);
-        }
-    });
-
-});
-
-$('#create-meeting').click(function () {
-    $('#status-section').removeClass('hidden');
-    var name = $('#meeting_name').val();
-    var coordinator = $('#meeting_cordinater').val();
-    var attendees = $('#meeting_attendees').val();
-    var date = $('#date_time').val();
-    var message = $('#meeting_description').val();
-    var token = $('#token').val();
-
-    $.post('create-meeting', {
-        'name': name,
-        'coordinator': coordinator,
-        'attendees': attendees,
-        'date': date,
-        'message': message,
-        '_token': token
-    }, function (data) {
-        $('#status-section').addClass('hidden');
-        $('#message-section').removeClass('hidden');
-        var parsed = JSON.parse(data);
-        if (parsed === 'success') {
-            alert(parsed);
-        }
-    });
-
-});
-
 $(document).on('change', '#qualification', function () {
     var value = $('.qualification_select').val();
     if (value == 'Other') {
@@ -418,59 +363,6 @@ $('.showModal').click(function () {
     $('#pf_account_number').val(pf_account_number);
     $('#emp_id').val(employee_id);
     $('#bankModal').modal('show');
-});
-
-$('#update-bank-account-details').click(function () {
-    swal(
-        "Please wait while we process your request"
-    );
-
-    var employee_id = $('#emp_id').val();
-    var employee_name = $('#employee_name').val();
-    var bank_name = $('#bank_name').val();
-    var account_number = $('#account_number').val();
-    var ifsc_code = $('#ifsc_code').val();
-    var pf_account_number = $('#pf_account_number').val();
-    var token = $('#token').val();
-
-    $.post('/update-account-details', {
-        'employee_id': employee_id,
-        'employee_name': employee_name,
-        'bank_name': bank_name,
-        'account_number': account_number,
-        'ifsc_code': ifsc_code,
-        'pf_account_number': pf_account_number,
-        '_token': token
-    }, function (data) {
-        var parsed = JSON.parse(data);
-
-        if (parsed == 'success') {
-            swal({
-                    title: "Success!",
-                    text: "Bank Details Successfully updated!",
-                    type: "success",
-                    confirmButtonText: "OK",
-                    allowEscapeKey: true,
-                    allowOutsideClick: true
-                },
-                function () {
-                    location.reload(true);
-                });
-        }
-        else {
-            swal({
-                    title: "Error!",
-                    text: "Sorry, details not update!",
-                    type: "error",
-                    confirmButtonText: "OK",
-                    allowEscapeKey: true,
-                    allowOutsideClick: true
-                },
-                function () {
-                    location.reload(true);
-                });
-        }
-    });
 });
 
 $(document).on('change', '#promotion_emp_id', function () {
