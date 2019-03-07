@@ -66,12 +66,8 @@ Route::group(['middleware' => ['auth']], function ()
 
     Route::get('employees/upload', ['as' => 'upload-emp', 'uses' => 'EmpController@importFile']);
 
-    //Routes for Bank Account details
     Route::post('employees/upload', ['as' => 'upload-emp', 'uses' => 'EmpController@uploadFile']);
 
-    Route::get('bank-account-details', ['uses' => 'EmpController@showDetails']);
-
-    Route::post('update-account-details', ['uses' => 'EmpController@updateAccountDetail']);
     Route::get('delete-emp/{id}', ['as' => 'delete-emp', 'uses' => 'EmpController@doDelete']);
 
     //Routes for Team.

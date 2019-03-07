@@ -86,13 +86,6 @@
 	</li>
 
 	<li>
-		<a href="/bank-account-details">
-			<span class="fa fa-bank"></span>
-			<span class="sidebar-title">Bank Account</span>
-		</a>
-	</li>
-
-	<li>
 		<a class="accordion-toggle" href="/dashboard">
 			<span class="fa fa-group"></span>
 			<span class="sidebar-title">Teams</span>
