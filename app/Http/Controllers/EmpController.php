@@ -22,6 +22,7 @@ class EmpController extends Controller
     public function addEmployee()
     {
         $roles = Role::get();
+        $form_action = '/employee/add';
 
         return view('hrms.employee.add', compact('roles'));
     }
@@ -113,9 +114,9 @@ class EmpController extends Controller
     {
         //$emps = Employee::whereid($id)->with('userrole.role')->first();
         $emps = User::where('id', $id)->with('employee', 'role.role')->first();
-
         $roles = Role::get();
-        return view('hrms.employee.add', compact('emps', 'roles'));
+        $form_action = '/employee/' . $id . '/edit';
+        return view('hrms.employee.add', compact('emps', 'roles', 'form_action'));
     }
 
     public function doEdit(Request $request, $id)

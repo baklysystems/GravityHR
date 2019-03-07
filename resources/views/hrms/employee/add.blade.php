@@ -84,7 +84,7 @@
 					<!-- -------------- Wizard -------------- -->
 					<!-- -------------- Spec Form -------------- -->
 					<div class="allcp-form">
-						<form method="post" action="/edit-emp/3" id="custom-form-wizard">
+						<form method="post" action="{{ $form_action }}" id="custom-form-wizard">
 							<input name="_token" id="token" type="hidden" value="{{ csrf_token() }}" />
 							<div class="wizard clearfix steps-tabs steps-justified">
 								<!-- -------------- step 1 -------------- -->
@@ -565,7 +565,7 @@ class="gui-input phone-group" maxlength="10" minlength="10">
 									</div>
 									{{-- here --}}
 								</section>
-								{{-- <input value="Save Changes" type="submit" /> --}}
+								<input value="Save Changes" type="submit" class="btn btn-info" />
 							</div>
 							<!-- -------------- /Wizard -------------- -->
 						</form>
