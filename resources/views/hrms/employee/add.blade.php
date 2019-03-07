@@ -42,7 +42,7 @@
 
 		<section id="content_wrapper">
 			<header id="topbar" class="alt">
-				@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+				@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 				<div class="topbar-left">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-icon">
@@ -107,7 +107,7 @@
 												<label for="photo-upload"><h6 class="mb5 mtn"> Photo </h6></label>
 												<label class="field prepend-icon append-button file">
 												<span class="button">Choose File</span>
-												@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 												<input type="hidden" value="edit-emp/{{$emps->id}}" id="url">
 												<input type="file" class="gui-file" name="photo" id="photo_upload"
 												value="@if($emps && $emps->photo){{$emps->photo}}@endif"
@@ -131,7 +131,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn">First Name </h6></label>
 												<label for="input002" class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" name="first_name" id="first_name" class="gui-input" value="@if($emps && $emps->employee->first_name){{$emps->employee->first_name}}@endif">
 													@else
 													<input type="text" name="first_name" id="first_name" class="gui-input">
@@ -143,7 +143,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn">Middle Name </h6></label>
 												<label for="input002" class="field prepend-icon">
-												@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 												<input type="text" name="middle_name" id="middle_name" class="gui-input"
 												value="@if($emps && $emps->employee->middle_name){{$emps->employee->middle_name}}@endif">
 												@else
@@ -156,7 +156,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn">Last Name </h6></label>
 												<label for="input002" class="field prepend-icon">
-												@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 												<input type="text" name="last_name" id="last_name" class="gui-input"
 												value="@if($emps && $emps->employee->last_name){{$emps->employee->last_name}}@endif">
 												@else
@@ -170,7 +170,7 @@
 										<div class="col-md-4">
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Role </h6></label> @if(\Route::getFacadeRoot()->current()->uri() ==
-												'edit-emp/{id}')
+												'employee/{id}/edit')
 												<select class="select2-single form-control" name="role" id="role" readonly>
 												<option value="">Select role</option>
 												@foreach($roles as $role)
@@ -192,7 +192,7 @@
 											<div class="section">
 												<label for="date_of_birth" class="field prepend-icon mb5"><h6 class="mb5 mtn"> Date of Birth </h6></label>
 												<div class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" id="date_of_birth" class="gui-input fs13" name="date_of_birth" value="@if($emps && $emps->employee->date_of_birth){{$emps->employee->date_of_birth}}@endif">													@else {{-- <input type="text" id="date_of_birth" class="gui-input fs13" name="date_of_birth"> --}}
 													<input type="text" id="datepicker1" class="select2-single form-control" name="date_of_birth"> @endif
 												</div>
@@ -219,7 +219,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Primary Phone </h6></label>
 												<label for="input002" class="field prepend-icon">
-												@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 												<input type="number" name="primary_phone" id="primary_phone"
 												class="gui-input phone-group" maxlength="10" minlength="10"
 												value="@if($emps && $emps->employee->primary_phone){{$emps->employee->primary_phone}}@endif">
@@ -234,7 +234,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Secondary Phone </h6></label>
 												<label for="input002" class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="number" name="secondary_phone" id="secondary_phone"
 													class="gui-input phone-group" maxlength="10" minlength="10"
 													value="@if($emps && $emps->employee->secondary_phone){{$emps->employee->secondary_phone}}@endif">
@@ -251,7 +251,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Work Email </h6></label>
 												<label for="input002" class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="email" name="work_email" id="work_email" class="gui-input email-group" 
 													value="@if($emps && $emps->employee->work_email){{$emps->employee->work_email}}@endif">
 													@else
@@ -264,7 +264,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Personal Email </h6></label>
 												<label for="input002" class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="email" name="personal_email" id="personal_email" class="gui-input email-group" 
 													value="@if($emps && $emps->employee->personal_email){{$emps->employee->personal_email}}@endif">
 													@else
@@ -279,7 +279,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Current Address </h6></label>
 												<label for="input002" class="field prepend-icon">
-												@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 												<input type="text" name="current_address" id="current_address" class="gui-input"
 												value="@if($emps && $emps->employee->current_address){{$emps->employee->current_address}}@endif">
 												@else
@@ -294,7 +294,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Permanent Address </h6></label>
 												<label for="input002" class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" name="permanent_address" id="permanent_address"
 													class="gui-input"
 													value="@if($emps && $emps->employee->permanent_address){{$emps->employee->permanent_address}}@endif">
@@ -310,7 +310,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Qualification </h6></label>
 												<label for="input002" class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													{!! Form::select('qualification_list', qualification(),$emps->employee->qualification, ['class' => 'select2-single form-control qualification_select', 'id' => 'qualification']) !!}
 													<input type="text" id="qualification" class="gui-input form-control hidden qualification_text" placeholder="Enter other qualification" value="{{$emps->employee->qualification}}"/>
 													@else
@@ -334,7 +334,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn">Employee Code</h6></label>
 												<label for="input002" class="field prepend-icon">
-												@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" name="code" id="code" class="gui-input"
 																	value="@if($emps && $emps->employee->code){{$emps->employee->code}}@endif">
 												@else
@@ -347,7 +347,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn">Employment Status </h6></label>
 												<div class="option-group field">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<label class="field option mb5">
 <input type="radio" name="status" id="status" value="1" @if(isset($emps))@if($emps->employee->status == '1') checked @endif @endif>	
 <span class="radio"></span>Active</label>
@@ -368,7 +368,7 @@
 											<div class="section">
 												<label for="date_of_joining" class="field prepend-icon mb5"><h6 class="mb5 mtn"> Date Hired </h6></label>
 												<div class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" id="date_of_joining" class="gui-input fs13" name="date_of_joining" value="@if($emps && $emps->employee->date_of_joining){{$emps->employee->date_of_joining}}@endif">													@else
 													<input type="text" id="date_of_joining" class="gui-input fs13" name="date_of_joining"> @endif
 												</div>
@@ -381,7 +381,7 @@
 												<label for="input002"><h6 class="mb5 mtn"> Department </h6></label>
 												<select class="select2-single form-control" name="department" id="department">
 	<option value="">Select department</option>
-	@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+	@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 			@if($emps->employee->department == 'Marketplace')
 					<option value="Marketplace" selected>Marketplace</option>
 					<option value="Social Media">Social Media</option>
@@ -407,7 +407,7 @@
 											<div class="section">
 												<label for="datepicker4" class="field prepend-icon mb5"><h6 class="mb5 mtn"> Position </h6></label>
 												<div class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" id="job_title" class="gui-input fs13" name="job_title" value="@if($emps && $emps->employee->job_title){{$emps->employee->job_title}}@endif">													@else
 													<input type="text" id="job_title" class="gui-input fs13" name="job_title"> @endif
 												</div>
@@ -419,7 +419,7 @@
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Starting Salary </h6> </label>
 												<label for="input002" class="field prepend-icon">
-@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 <input type="text" name="salary" id="salary" class="gui-input"
 value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" readonly>
 @else
@@ -442,7 +442,7 @@ value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" r
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Contact Person Name </h6></label>
 												<label for="input002" class="field prepend-icon">
-	@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+	@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 			<input type="text" name="contact_person" id="contact_person" class="gui-input"
 							value="@if($emps && $emps->employee->contact_person){{$emps->employee->contact_person}}@endif">
 	@else
@@ -455,7 +455,7 @@ value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" r
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Relationship </h6></label>
 												<label for="input002" class="field prepend-icon">
-										@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+										@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 												<input type="text" name="contact_person_relationship" id="contact_person_relationship" class="gui-input"
 																value="@if($emps && $emps->employee->contact_person_relationship){{$emps->employee->contact_person_relationship}}@endif">
 										@else
@@ -470,7 +470,7 @@ value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" r
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Contact Number </h6></label>
 												<label for="input002" class="field prepend-icon">
-	@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+	@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 			<input type="number" name="contact_person_phone" id="contact_person_phone"
 							class="gui-input phone-group" maxlength="10" minlength="10"
 							value="@if($emps && $emps->employee->contact_person_phone){{$emps->employee->contact_person_phone}}@endif">
@@ -485,7 +485,7 @@ value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" r
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Alt Contact Number </h6></label>
 												<label for="input002" class="field prepend-icon">
-@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 <input type="number" name="contact_person_alt_phone" id="contact_person_alt_phone"
 class="gui-input phone-group" maxlength="10" minlength="10"
 value="@if($emps && $emps->employee->contact_person_alt_phone){{$emps->employee->contact_person_alt_phone}}@endif">
@@ -507,7 +507,7 @@ class="gui-input phone-group" maxlength="10" minlength="10">
 											<div class="section">
 												<label for="datepicker6" class="field prepend-icon mb5"><h6 class="mb5 mtn"> Social Security Number (SSS) </h6></label>
 												<div class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" id="sss_number" class="gui-input fs13" name="sss_number" value="@if($emps && $emps->employee->sss_number){{$emps->employee->sss_number}}@endif"
 													/> @else
 													<input type="text" id="sss_number" class="gui-input fs13" name="sss_number" /> @endif
@@ -518,7 +518,7 @@ class="gui-input phone-group" maxlength="10" minlength="10">
 											<div class="section">
 												<label for="datepicker6" class="field prepend-icon mb5"><h6 class="mb5 mtn"> Pag-IBIG ID Number </h6></label>
 												<div class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" id="pagibig_number" class="gui-input fs13" name="pagibig_number" value="@if($emps && $emps->employee->pagibig_number){{$emps->employee->pagibig_number}}@endif"
 													/> @else
 													<input type="text" id="pagibig_number" class="gui-input fs13" name="pagibig_number" /> @endif
@@ -531,7 +531,7 @@ class="gui-input phone-group" maxlength="10" minlength="10">
 											<div class="section">
 												<label for="datepicker6" class="field prepend-icon mb5"><h6 class="mb5 mtn"> Taxpayer Identification Number (TIN) </h6></label>
 												<div class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" id="tin_number" class="gui-input fs13" name="tin_number" value="@if($emps && $emps->employee->tin_number){{$emps->employee->tin_number}}@endif"
 													/> @else
 													<input type="text" id="tin_number" class="gui-input fs13" name="tin_number" /> @endif
@@ -542,7 +542,7 @@ class="gui-input phone-group" maxlength="10" minlength="10">
 											<div class="section">
 												<label for="datepicker6" class="field prepend-icon mb5"><h6 class="mb5 mtn"> PhilHealth ID Number </h6></label>
 												<div class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" id="philhealth_number" class="gui-input fs13" name="philhealth_number" value="@if($emps && $emps->employee->philhealth_number){{$emps->employee->philhealth_number}}@endif"
 													/> @else
 													<input type="text" id="philhealth_number" class="gui-input fs13" name="philhealth_number" /> @endif
@@ -555,7 +555,7 @@ class="gui-input phone-group" maxlength="10" minlength="10">
 											<div class="section">
 												<label for="datepicker6" class="field prepend-icon mb5"><h6 class="mb5 mtn"> Company Insurance Number </h6></label>
 												<div class="field prepend-icon">
-													@if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<input type="text" id="health_insurance_number" class="gui-input fs13" name="health_insurance_number" value="@if($emps && $emps->employee->health_insurance_number){{$emps->employee->health_insurance_number}}@endif"
 													/> @else
 													<input type="text" id="health_insurance_number" class="gui-input fs13" name="health_insurance_number" /> @endif
@@ -625,8 +625,6 @@ aria-hidden="true">&times;</span></button>
 	<!-- -------------- Select2 JS -------------- -->
 	<script src="/assets/js/plugins/select2/select2.min.js"></script>
 	<script src="/assets/js/function.js"></script>
-	<!-- -------------- /Scripts -------------- -->
-	<script src="/assets/js/pages/dashboard1.js"></script>
 </body>
 
 </html>

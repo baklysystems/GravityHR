@@ -50,29 +50,25 @@ Route::group(['middleware' => ['auth']], function ()
 
     //Routes for add-employees
 
-    Route::get('add-employee', ['as' => 'add-employee', 'uses' => 'EmpController@addEmployee']);
+    Route::get('employee/add', ['as' => 'add-employee', 'uses' => 'EmpController@addEmployee']);
 
-    Route::post('add-employee', ['as' => 'add-employee', 'uses' => 'EmpController@processEmployee']);
+    Route::post('employee/add', ['as' => 'add-employee', 'uses' => 'EmpController@processEmployee']);
 
-    Route::get('employee-manager', ['as' => 'employee-manager', 'uses' => 'EmpController@showEmployee']);
+    Route::get('employee/{id}', ['as' => 'employee-view', 'uses' => 'EmpController@showEmployee']);
 
-    Route::post('employee-manager', 'EmpController@searchEmployee');
+    Route::get('employee/{id}/edit', ['as' => 'edit-emp', 'uses' => 'EmpController@showEdit']);
 
-    Route::get('upload-emp', ['as' => 'upload-emp', 'uses' => 'EmpController@importFile']);
+    Route::post('employee/{id}/edit', ['as' => 'edit-emp', 'uses' => 'EmpController@doEdit']);
 
-    Route::post('upload-emp', ['as' => 'upload-emp', 'uses' => 'EmpController@uploadFile']);
+    Route::get('employees/list', ['as' => 'employee-manager', 'uses' => 'EmpController@listEmployees']);
 
-    Route::get('edit-emp/{id}', ['as' => 'edit-emp', 'uses' => 'EmpController@showEdit']);
+    Route::post('employees/list', 'EmpController@searchEmployee');
 
-    Route::post('edit-emp/{id}', ['as' => 'edit-emp', 'uses' => 'EmpController@doEdit']);
+    Route::get('employees/upload', ['as' => 'upload-emp', 'uses' => 'EmpController@importFile']);
+
+    Route::post('employees/upload', ['as' => 'upload-emp', 'uses' => 'EmpController@uploadFile']);
 
     Route::get('delete-emp/{id}', ['as' => 'delete-emp', 'uses' => 'EmpController@doDelete']);
-
-    //Routes for Bank Account details
-
-    Route::get('bank-account-details', ['uses' => 'EmpController@showDetails']);
-
-    Route::post('update-account-details', ['uses' => 'EmpController@updateAccountDetail']);
 
     //Routes for Team.
 

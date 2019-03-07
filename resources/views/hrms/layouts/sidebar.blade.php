@@ -36,7 +36,7 @@
 	</li>
 
 	@if(\Auth::user()->isAdmin || \Auth::user()->isHR() || \Auth::user()->isManager())
-	<li>
+	<li class="hidden">
 		<a class="accordion-toggle" href="/dashboard">
 			<span class="fa fa-user"></span>
 			<span class="sidebar-title">Clients</span>
@@ -56,7 +56,7 @@
 	</li>
 	@endif
 
-	<li>
+	<li class="hidden">
 		<a class="accordion-toggle" href="/dashboard">
 			<span class="fa fa-user"></span>
 			<span class="sidebar-title">Projects</span>
@@ -83,13 +83,6 @@
 				<span class="glyphicon glyphicon-tags"></span> Project Assignment Listing</a>
 			</li>
 		</ul>
-	</li>
-
-	<li>
-		<a href="/bank-account-details">
-			<span class="fa fa-bank"></span>
-			<span class="sidebar-title">Bank Account</span>
-		</a>
 	</li>
 
 	<li>
@@ -319,31 +312,13 @@
 		</ul>
 	</li>
 
-	@endif {{--
+	@endif 
 
-	<li class="sidebar-label pt30"> Extras</li>--}}
 	<li>
-		<a href="/create-meeting">
-	<span class="fa fa-calendar-o"></span>
-	<span class="sidebar-title"> Meeting  &nbsp Invitation </span>
-	</a>
-	</li>
-
-	@if(Auth::user()->isCoordinator() || Auth::user()->isHR())
-	<li>
-		<a href="/create-event">
-	<span class="fa fa-calendar-o"></span>
-	<span class="sidebar-title"> Event  &nbsp Invitation </span>
-	</a>
-	</li>
-	@endif
-	<li>
-
 		<a href="/download-forms">
-	<span class="fa fa-book"></span>
-	<span class="sidebar-title">Download Forms</span>
-	
-	</a>
+			<span class="fa fa-book"></span>
+			<span class="sidebar-title">Download Forms</span>
+		</a>
 	</li>
 
 	<li>

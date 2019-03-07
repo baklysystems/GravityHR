@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Jobs\ExportData;
 use App\Models\Employee;
 use App\Models\EmployeeUpload;
+use App\Models\LeaveBalances;
 use App\Models\Role;
 use App\Models\UserRole;
 use App\Promotion;
@@ -92,7 +93,15 @@ class EmpController extends Controller
 
     }
 
-    public function showEmployee()
+    public function showEmployee($id)
+    {
+        $details = Employee::where('user_id', $id)->with('userrole.role')->first();
+        $leave_balances = LeaveBalances::where('user_id', $id)->get();
+
+        return view('hrms.profile', compact('details', 'leave_balances'));
+    }
+
+    public function listEmployees()
     {
         $emps   = User::with('employee', 'role.role')->paginate(15);
         $column = '';
@@ -327,30 +336,6 @@ class EmpController extends Controller
 
             return response()->download(storage_path('export/') . $fileName);
         }
-    }
-
-
-    public function showDetails()
-    {
-        $emps = User::with('employee')->paginate(15);
-        return view('hrms.employee.show_bank_detail', compact('emps'));
-    }
-
-    public function updateAccountDetail(Request $request)
-    {
-        try {
-            $model                    = Employee::where('id', $request->employee_id)->first();
-            $model->bank_name         = $request->bank_name;
-            $model->account_number    = $request->account_number;
-            $model->pf_account_number = $request->pf_account_number;
-            $model->ifsc_code         = $request->ifsc_code;
-            $model->save();
-            return json_encode('success');
-        } catch (\Exception $e) {
-            \Log::info($e->getMessage() . ' on ' . $e->getLine() . ' in ' . $e->getFile());
-            return json_encode('failed');
-        }
-
     }
 
     public function doPromotion()

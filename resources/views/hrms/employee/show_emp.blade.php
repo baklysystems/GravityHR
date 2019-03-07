@@ -116,7 +116,7 @@
 												</button>
 												<ul class="dropdown-menu" role="menu">
 													<li>
-														<a href="/edit-emp/{{$emp->id}}">Edit</a>
+														<a href="/employee/{{$emp->id}}/edit">Edit</a>
 													</li>
 													<li>
 														<a href="/delete-emp/{{$emp->id}}">Delete</a>

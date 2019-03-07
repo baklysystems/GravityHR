@@ -2,7 +2,6 @@
 
     namespace App\Http\Controllers;
 
-    use App\Models\Event;
     use App\Models\Meeting;
     use App\Models\Role;
     use App\User;
@@ -55,10 +54,7 @@
 
         public function dashboard()
         {
-            $events   = $this->convertToArray(Event::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
-            $meetings = $this->convertToArray(Meeting::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
-
-            return view('hrms.dashboard', compact('events', 'meetings'));
+            return view('hrms.dashboard');
         }
 
         public function welcome()
