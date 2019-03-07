@@ -61,25 +61,16 @@
 	<div id="main">
 
 		<!-- -------------- Header  -------------- -->
-	@include('hrms.layouts.header')
-		<!-- -------------- /Header  -------------- -->
-
-		<!-- -------------- Sidebar  -------------- -->
-		<aside id="sidebar_left" class="nano nano-light affix">
-
-			<!-- -------------- Sidebar Left Wrapper  -------------- -->
-			<div class="sidebar-left-content nano-content">
-
-				<!-- -------------- Sidebar Header -------------- -->
-				<header class="sidebar-header">
-
-					<!-- -------------- Sidebar - Author -------------- -->
-					@include('hrms.layouts.sidebar')
-
-			</div>
-			<!-- -------------- /Sidebar Left Wrapper  -------------- -->
-
-		</aside>
+@include('hrms.layouts.header')
+	<aside id="sidebar_left" class="nano nano-light affix">
+		<!-- -------------- Sidebar Left Wrapper  -------------- -->
+		<div class="sidebar-left-content nano-content">
+			<!-- -------------- Sidebar Menu  -------------- -->
+	@include('hrms.layouts.sidebar')
+			<!-- -------------- /Sidebar Menu  -------------- -->
+		</div>
+		<!-- -------------- /Sidebar Left Wrapper  -------------- -->
+	</aside>
 
 		<!-- -------------- /Sidebar -------------- -->
 
