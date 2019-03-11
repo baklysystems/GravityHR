@@ -12519,8 +12519,8 @@ a.thumbnail.active {
   width: 40px;
 }
 .media {
-  color: #a9acbd;
-  font-weight: 600;
+  color: #525252;
+  font-weight: 400;
   margin-top: 15px;
 }
 .media:first-child {
