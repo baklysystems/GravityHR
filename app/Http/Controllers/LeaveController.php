@@ -537,47 +537,42 @@
      */
     public function processHolidays(Request $request)
     {
-      try
-      {
-        if(Input::hasFile('upload_file'))
-        {
+      try {
+        if (Input::hasFile('upload_file')) {
           $file = Input::file('upload_file');
           $allowedext = ["xlsx", "xls"];
           $extension = $file->getClientOriginalExtension();
           $filename = $file->getClientOriginalName();
 
-
-          if(in_array($extension, $allowedext))
-          {
+          if (in_array($extension, $allowedext)) {
 
             //move this file to storage path
             $file->move(storage_path('holidays/'), $filename);
               $holiday = new HolidayFilenames();
               $holiday->name = $filename;
               $holiday->description = $request->description;
-              $holiday->date = date_format(date_create($request->date), 'Y-m-d');
               $holiday->save();
-
-          } else
-          {
+          } 
+          else {
             \Session::flash('flash_message', 'Please upload only excel files with xls or xlsx extension');
 
             return redirect()->back();
           }
 
-          Excel::load(storage_path('holidays/' . $filename), function ($reader)
-          {
-            $rows = $reader->get(['occasion', 'date_from', 'date_to']);
+          Excel::load(storage_path('holidays/' . $filename), function ($reader) {
+            $rows = $reader->get(['occasion', 'date_from', 'type']);
 
-            foreach($rows as $row)
-            {
+            foreach($rows as $row) {
+              if ($row->occasion == null) break;
+
               $holiday = new Holiday();
-              $holiday->occasion = $row->occasion;
-              $holiday->date_from = $row->date_from;
-              $holiday->date_to = $row->date_to;
+              $holiday->name = $row->occasion;
+              $holiday->date_start = $row->date_from;
+              $holiday->type = ($row->type == 'regular') ? 'r' : 's';
               $holiday->save();
             }
-              return redirect()->back()->with('flash_message', 'Holidays successfully added');
+
+            return redirect()->back()->with('flash_message', 'Holidays successfully added');
           });
         }
       }

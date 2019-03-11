@@ -52,8 +52,8 @@
                                         <tr class="bg-light">
                                             <th class="text-center">Id</th>
                                             <th class="text-center">Occasion</th>
-                                            <th class="text-center">Date From</th>
-                                            <th class="text-center">Date To</th>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">Type</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                         </thead>
@@ -62,10 +62,10 @@
                                         <?php $i =0;?>
                                         @foreach($holidays as $holiday)
                                             <tr>
-                                                <td class="text-center">{{$i+=1}}</td>
-                                                <td class="text-center">{{$holiday->occasion}}</td>
-                                                <td class="text-center">{{getFormattedDate($holiday->date_from)}}</td>
-                                                <td class="text-center">{{getFormattedDate($holiday->date_to)}}</td>
+                                                <td class="text-center">{{$holiday->id}}</td>
+                                                <td class="text-center">{{$holiday->name}}</td>
+                                                <td class="text-center">{{getFormattedDate($holiday->date_start)}}</td>
+                                                <td class="text-center">{{ ($holiday->type == 'r') ? 'Regular' : 'Special' }}</td>
                                                 <td class="text-center">
                                                     <div class="btn-group text-right">
                                                         <button type="button"
