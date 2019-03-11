@@ -31,7 +31,7 @@ class EmpController extends Controller
 
     public function processEmployee(Request $request)
     {
-        $filename = public_path('photos/a.png');
+        $filename = public_path('img/avatar.png');
         if ($request->file('photo')) {
             $file             = $request->file('photo');
             $filename         = str_random(12);
@@ -46,53 +46,54 @@ class EmpController extends Controller
         }
 
         $user           = new User;
-        $user->name     = $request->emp_name;
-        $user->email    = str_replace(' ', '_', $request->emp_name) . '@sipi-ip.sg';
-        $user->password = bcrypt('123456');
+        $user->name     = sprintf('%s %s', $request->first_name, $request->last_name);
+        $user->email    = (strlen($request->work_email) > 0) ? $request->work_email : $request->personal_email;
+        $user->password = bcrypt('GravityBPO123');
         $user->save();
 
-        $emp                       = new Employee;
-        $emp->photo                = $filename;
-        $emp->name                 = $request->emp_name;
-        $emp->code                 = $request->emp_code;
-        $emp->status               = $request->emp_status;
-        $emp->gender               = $request->gender;
-        $emp->date_of_birth        = date_format(date_create($request->dob), 'Y-m-d');
-        $emp->date_of_joining      = date_format(date_create($request->doj), 'Y-m-d');
-        $emp->number               = $request->number;
-        $emp->qualification        = $request->qualification;
-        $emp->emergency_number     = $request->emergency_number;
-        $emp->pan_number           = $request->pan_number;
-        $emp->father_name          = $request->father_name;
+        $emp                = new Employee;
+        $emp->photo         = $filename;
+        $emp->code          = $request->code;
+        $emp->first_name    = $request->first_name;
+        $emp->middle_name   = $request->middle_name;
+        $emp->last_name     = $request->last_name;
+        //$emp->suffix       = $request->suffix;
+        //$emp->nickname     = $request->nickname;
+        $emp->job_title     = $request->job_title;
+        $emp->gender        = $request->gender;
+        $emp->status        = $request->status;
+        $emp->civil_status  = $request->civil_status;
+        $emp->date_of_birth    = date_format(date_create($request->date_of_birth), 'Y-m-d');
+        $emp->date_of_joining  = date_format(date_create($request->date_of_joining), 'Y-m-d');
+        $emp->qualification    = $request->qualification_list;
+        $emp->primary_phone    = $request->primary_phone;
+        $emp->secondary_phone  = $request->secondary_phone;
+        $emp->work_email       = $request->work_email;
+        $emp->personal_email   = $request->personal_email;
+        $emp->contact_person   = $request->contact_person;
+        $emp->contact_person_relationship  = $request->contact_person_relationship;
+        $emp->contact_person_phone         = $request->contact_person_phone;
+        $emp->contact_person_alt_phone     = $request->contact_person_alt_phone;
+        $emp->sss_number           = $request->sss_number;
+        $emp->pagibig_number       = $request->pagibig_number;
+        $emp->philhealth_number    = $request->philhealth_number;
+        $emp->tin_number           = $request->tin_number;
+        $emp->health_insurance_number       = $request->health_insurance_number;
         $emp->current_address      = $request->current_address;
         $emp->permanent_address    = $request->permanent_address;
-        $emp->formalities          = $request->formalities;
-        $emp->offer_acceptance     = $request->offer_acceptance;
-        $emp->probation_period     = $request->probation_period;
-        $emp->date_of_confirmation = date_format(date_create($request->date_of_confirmation), 'Y-m-d');
-        $emp->department           = $request->department;
-        $emp->salary               = $request->salary;
-        $emp->account_number       = $request->account_number;
-        $emp->bank_name            = $request->bank_name;
-        $emp->ifsc_code            = $request->ifsc_code;
-        $emp->pf_account_number    = $request->pf_account_number;
-        $emp->un_number            = $request->un_number;
-        $emp->pf_status            = $request->pf_status;
-        $emp->date_of_resignation  = date_format(date_create($request->date_of_resignation), 'Y-m-d');
-        $emp->notice_period        = $request->notice_period;
-        $emp->last_working_day     = date_format(date_create($request->last_working_day), 'Y-m-d');
-        $emp->full_final           = $request->full_final;
-        $emp->user_id              = $user->id;
+        $emp->shift_id      = $request->shift;
+        $emp->reporting_to  = 1;
+        $emp->user_id       = $user->id;
         $emp->save();
 
-        $userRole          = new UserRole();
-        $userRole->role_id = $request->role;
-        $userRole->user_id = $user->id;
-        $userRole->save();
+        $user_roles          = new UserRole();
+        $user_roles->role_id = $request->role;
+        $user_roles->user_id = $user->id;
+        $user_roles->save();
         //$emp->userrole()->create(['role_id' => $request->role]);
 
-        return json_encode(['title' => 'Success', 'message' => 'Employee added successfully', 'class' => 'modal-header-success']);
-
+        //return json_encode(['title' => 'Success', 'message' => 'Employee added successfully', 'class' => 'modal-header-success']);
+        return redirect()->back();
     }
 
     public function showEmployee($id)
@@ -140,8 +141,8 @@ class EmpController extends Controller
         //$edit = Employee::findOrFail($id);
         $edit = Employee::where('id', $id)->first();
 
-        //$edit->photos       = (!empty($request->$filename)) ? $request->$filename : '/img/avatar.png';
-        $edit->code         = $request->code;
+        //$edit->photo        = (!empty($request->$filename)) ? $request->$filename : '/img/avatar.png';
+        //$edit->code         = $request->code;
         $edit->first_name   = $request->first_name;
         $edit->middle_name  = $request->middle_name;
         $edit->last_name    = $request->last_name;
