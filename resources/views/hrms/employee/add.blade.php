@@ -95,8 +95,15 @@
 										<div class="col-md-12">
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Employee ID</h6></label>
-												<label for="input002" class="field prepend-icon"> 
+												{{-- <label for="input002" class="field prepend-icon"> 
 													<input type="text" name="employeeID" id="employeeID" class="gui-input" value="SCB-0000" disabled> 
+												</label> --}}
+												<label for="input002" class="field prepend-icon">
+												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
+												<input type="text" name="first_name" id="first_name" class="gui-input" value="@if($emps && $emps->employee->code){{$emps->employee->code}}@endif" disabled>
+												@else
+												<input type="text" name="first_name" id="first_name" class="gui-input" disabled>
+												@endif
 												</label>
 											</div>
 										</div>

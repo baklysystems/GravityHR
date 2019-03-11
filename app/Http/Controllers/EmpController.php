@@ -24,7 +24,7 @@ class EmpController extends Controller
         $roles = Role::get();
         $form_action = '/employee/add';
 
-        return view('hrms.employee.add', compact('roles'));
+        return view('hrms.employee.add', compact('roles', 'form_action'));
     }
 
     public function processEmployee(Request $request)

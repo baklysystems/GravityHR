@@ -10746,7 +10746,7 @@ tbody.collapse.in {
   height: 1px;
   margin: 9px 18px;
   overflow: hidden;
-  background-color: #4c536e;
+  background-color: rgba(255,255,255,.1);
 }
 .bg-dark .dropdown-menu > li > a {
   color: #ffffff;
@@ -10759,8 +10759,8 @@ tbody.collapse.in {
 }
 .bg-dark .dropdown-menu > li > a:hover,
 .bg-dark .dropdown-menu > li > a:focus {
-  color: #bcbdc0;
-  background-color: #2a2f43;
+  color: rgba(255,255,255,.7);
+  background-color: #1e1e1e;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -12593,7 +12593,7 @@ a.thumbnail.active {
   margin-right: 5px;
 }
 .bg-dark .list-group-item {
-  background-color: #2a2f43;
+  background-color: #1e1e1e;
   border: 0;
 }
 a.list-group-item {
