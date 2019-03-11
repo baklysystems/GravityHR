@@ -6,6 +6,7 @@ use App\Models\Employee;
 use App\Models\EmployeeUpload;
 use App\Models\LeaveBalances;
 use App\Models\Role;
+use App\Models\ShiftManagers;
 use App\Models\UserRole;
 use App\Promotion;
 use App\User;
@@ -22,9 +23,10 @@ class EmpController extends Controller
     public function addEmployee()
     {
         $roles = Role::get();
+        $shifts = ShiftManagers::get();
         $form_action = '/employee/add';
 
-        return view('hrms.employee.add', compact('roles'));
+        return view('hrms.employee.add', compact('roles', 'form_action', 'shifts'));
     }
 
     public function processEmployee(Request $request)
@@ -41,7 +43,6 @@ class EmpController extends Controller
             }
             $filename = $filename . '.' . $fileExt;
             $file->move($destinationPath, $filename);
-
         }
 
         $user           = new User;
@@ -115,8 +116,9 @@ class EmpController extends Controller
         //$emps = Employee::whereid($id)->with('userrole.role')->first();
         $emps = User::where('id', $id)->with('employee', 'role.role')->first();
         $roles = Role::get();
+        $shifts = ShiftManagers::get();
         $form_action = '/employee/' . $id . '/edit';
-        return view('hrms.employee.add', compact('emps', 'roles', 'form_action'));
+        return view('hrms.employee.add', compact('emps', 'roles', 'form_action', 'shifts'));
     }
 
     public function doEdit(Request $request, $id)
@@ -151,7 +153,7 @@ class EmpController extends Controller
         $edit->civil_status = $request->civil_status;
         $edit->date_of_birth    = date_format(date_create($request->date_of_birth), 'Y-m-d');
         $edit->date_of_joining  = date_format(date_create($request->date_of_joining), 'Y-m-d');
-        $edit->qualification    = $request->qualification;
+        $edit->qualification    = $request->qualification_list;
         $edit->primary_phone    = $request->primary_phone;
         $edit->secondary_phone  = $request->secondary_phone;
         $edit->work_email       = $request->work_email;
@@ -167,6 +169,7 @@ class EmpController extends Controller
         $edit->health_insurance_number       = $request->health_insurance_number;
         $edit->current_address      = $request->current_address;
         $edit->permanent_address    = $request->permanent_address;
+        $edit->shift_id     = $request->shift;
         $edit->save();
 
         $request->session()->flash('success', 'Employee updated successfully!');

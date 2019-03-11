@@ -382,23 +382,23 @@
 												<select class="select2-single form-control" name="department" id="department">
 	<option value="">Select department</option>
 	@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
-			@if($emps->employee->department == 'Marketplace')
-					<option value="Marketplace" selected>Marketplace</option>
-					<option value="Social Media">Social Media</option>
-					<option value="IT">IT</option>
-			@elseif($emps->employee->department == 'Social Media')
-					<option value="Marketplace">Marketplace</option>
-					<option value="Social Media" selected>Social Media</option>
-					<option value="IT">IT</option>
+			@if($emps->employee->department == 'Admin and HR')
+					<option value="Admin and HR" selected>Admin and HR</option>
+					<option value="Call Center">Call Center</option>
+					<option value="Tech Team">Tech Team</option>
+			@elseif($emps->employee->department == 'Call Center')
+					<option value="Admin and HR">Admin and HR</option>
+					<option value="Call Center" selected>Call Center</option>
+					<option value="Tech Team">Tech Team</option>
 			@else
-					<option value="Marketplace">Marketplace</option>
-					<option value="Social Media">Social Media</option>
-					<option value="IT" selected>IT</option>
+					<option value="Admin and HR">Admin and HR</option>
+					<option value="Call Center">Call Center</option>
+					<option value="Tech Team" selected>Tech Team</option>
 			@endif
 	@else
-			<option value="Marketplace">Marketplace</option>
-			<option value="Social Media">Social Media</option>
-			<option value="IT">IT</option>
+			<option value="Admin and HR">Admin and HR</option>
+			<option value="Call Center">Call Centera</option>
+			<option value="Tech Team">Tech Team</option>
 	@endif
 </select>
 											</div>
@@ -426,6 +426,32 @@ value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" r
 <input type="text" name="salary" id="salary" class="gui-input">
 @endif
 </label>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<div class="section">
+												<label for="input002"><h6 class="mb5 mtn"> Work Shift </h6></label> 
+												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
+													<select class="select2-single form-control" name="shift" id="shift">
+													<option value="">Select a shift</option>
+													@foreach($shifts as $shift)
+														@if (isset($emps->employee->shift_id) && $emps->employee->shift_id == $shift->id)
+														<option value="{{$shift->id}}" selected>{{$shift->name}}</option>
+														@endif
+													<option value="{{$shift->id}}">{{$shift->name}}</option>
+													@endforeach
+													</select> 
+												@else
+												<select class="select2-single form-control" name="role" id="role">
+													<option value="">Select shift</option>
+													@foreach($shifts as $shift)
+													<option value="{{$shift->id}}">{{$shift->name}}</option>
+													@endforeach
+												</select> 
+												@endif
 											</div>
 										</div>
 									</div>
