@@ -83,13 +83,6 @@
                                 </div>
 
                                 <div class="section">
-                                    <div class="input-group">
-                                        <label for="date" class="field prepend-icon "> <h6> Select Date </h6></label>
-                                        <input type="text" id="datepicker1" class="gui-input fs13 select2-single form-control" name="date" required>
-                                    </div>
-                                </div>
-
-                                <div class="section">
                                     <label for="file1"><h6 > Upload File </h6></label>
                                     <label class="field prepend-icon append-button file">
                                         <span class="button">Choose File</span>
