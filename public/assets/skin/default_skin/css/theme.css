@@ -73,7 +73,9 @@
 .cus-wrap-1 .btn-primary:hover{
   border-color: #A31E21 !important;
 }
-
+.media-body a{
+  color: #656565;
+}
 
 /*
     Animate.css - http://daneden.me/animate
@@ -10731,7 +10733,7 @@ tbody.collapse.in {
   display: block;
   padding: 5px 18px;
   clear: both;
-  color: #666666;
+  color: #323232;
   font-weight: normal;
   line-height: 1.49;
   white-space: nowrap;
@@ -10746,7 +10748,7 @@ tbody.collapse.in {
   height: 1px;
   margin: 9px 18px;
   overflow: hidden;
-  background-color: rgba(255,255,255,.1);
+  background-color: #333333;
 }
 .bg-dark .dropdown-menu > li > a {
   color: #ffffff;
@@ -10759,8 +10761,8 @@ tbody.collapse.in {
 }
 .bg-dark .dropdown-menu > li > a:hover,
 .bg-dark .dropdown-menu > li > a:focus {
-  color: rgba(255,255,255,.7);
-  background-color: #1e1e1e;
+  color: #bcbdc0;
+  background-color: #272727;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -17626,7 +17628,7 @@ body.sidebar-collapsed #sidebar:before {
 .navbar .navbar-btn.btn-group > .btn + .btn {
   color: #fff;
   background-color: #222222;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(203, 33, 34);
   border: 0;
   border-radius: 0 5px 5px 0;
   font-weight: 700;
@@ -17651,6 +17653,7 @@ body.sidebar-collapsed #sidebar:before {
 .navbar[class*='bg-'] .nav > li.dropdown.dropdown-fuse.open .dropdown-menu,
 .navbar[class*='bg-'] .nav > li.dropdown.dropdown-fuse > .navbar-btn.open .dropdown-menu {
   border-top: 0;
+  border-radius: 5px;
 }
 .navbar[class*='bg-'] .nav > li.dropdown.dropdown-fuse.open .dropdown-menu:after,
 .navbar[class*='bg-'] .nav > li.dropdown.dropdown-fuse > .navbar-btn.open .dropdown-menu:after {
@@ -17674,7 +17677,7 @@ body.sidebar-collapsed #sidebar:before {
   display: table-cell;
 }
 .navbar .media-list > li.media .media-heading small {
-  color: #AAA;
+  color: #656565;
 }
 .navbar .nav .list-group > li.list-group-item {
   border: 0;
@@ -17752,7 +17755,7 @@ body.sidebar-collapsed #sidebar:before {
   border-color: transparent;
 }
 .navbar.bg-dark .nav > li.dropdown .panel-body .media {
-  border-bottom-color: #475072;
+  border-bottom-color: #333333;
   color: #ffffff;
 }
 .navbar.bg-dark .nav > li.dropdown .panel-body .media .media-heading {
@@ -17760,11 +17763,11 @@ body.sidebar-collapsed #sidebar:before {
   font-size: 14px;
 }
 .navbar.bg-dark .nav > li.dropdown .panel-menu {
-  border-bottom-color: #475072;
+  border-bottom: 0;
   color: #ffffff;
 }
 .navbar.bg-dark .nav > li.dropdown .panel-footer {
-  border-top-color: #475072;
+  border-top: 0;
 }
 .navbar-logo-wrapper {
   background-color: #1e1e1e !important;
@@ -22079,8 +22082,9 @@ fieldset[disabled] .btn-system.active {
   background-color: #413c60;
 }
 .btn-dark {
-  color: #ffffff;
-  background-color: #1e1e1e;
+  color: #323232;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
 }
 .btn-dark:hover,
 .btn-dark:focus,
