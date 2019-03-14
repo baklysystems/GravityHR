@@ -1,16 +1,18 @@
 <div class="sidebar-widget author-widget">
 	<div class="media">
-		<img src="{{ URL::asset('assets/img/grav_logo.png') }}" class="img-responsive center-block">
+		<a href="/welcome"><img src="{{ URL::asset('assets/img/grav_logo.png') }}" class="img-responsive center-block"></a>
 	</div>
-</div>
+</div> 
 
 <ul class="nav sidebar-menu">
 	<li class="active">
-		<a class="accordion-toggle menu-open" href="/dashboard">
+		<a href="/welcome">
 			<span class="fa fa-dashboard"></span>
-			<span class="sidebar-title">Dashboard</span>
-		</a>
+			<span class="sidebar-title"> Dashboard</span>
+			</a>
 	</li>
+
+
 
 	@if(Auth::user()->isHR())
 	<li>
@@ -85,7 +87,7 @@
 		</ul>
 	</li>
 
-	<li>
+	<li class="hidden">
 		<a class="accordion-toggle" href="/dashboard">
 			<span class="fa fa-group"></span>
 			<span class="sidebar-title">Teams</span>
@@ -120,7 +122,7 @@
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li class="hidden">>
 		<a class="accordion-toggle" href="/dashboard">
 			<span class="fa fa fa-laptop"></span>
 			<span class="sidebar-title">Assets</span>
@@ -203,7 +205,7 @@
 		</ul>
 	</li>
 
-	<li>
+	<li class="hidden">>
 		<a class="accordion-toggle" href="/dashboard">
 	<span class="fa fa-money"></span>
 	<span class="sidebar-title">Expenses</span>
@@ -221,7 +223,7 @@
 		</ul>
 	</li>
 
-	<li>
+	<li class="hidden">>
 		<a class="accordion-toggle" href="/dashboard">
 	<span class="fa fa fa-trophy"></span>
 	<span class="sidebar-title">Awards</span>
@@ -297,7 +299,7 @@
 	<li>
 		<a class="accordion-toggle" href="#">
 	<span class="fa fa-tree"></span>
-	<span class="sidebar-title">Holiday</span>
+	<span class="sidebar-title">Holidays</span>
 	<span class="caret"></span>
 	</a>
 		<ul class="nav sub-nav">
@@ -312,7 +314,7 @@
 		</ul>
 	</li>
 
-	@endif 
+	@endif
 
 	<li>
 		<a href="/download-forms">

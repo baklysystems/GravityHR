@@ -1,26 +1,33 @@
 @extends('hrms.layouts.base') 
 @section('content')
-<!-- -------------- Topbar -------------- -->
-<header id="topbar" class="alt">
-	<div class="topbar-left">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-icon">
-				<a href="/dashboard"> <span class="fa fa-home"></span> </a>
-			</li>
-			<li class="breadcrumb-active">
-				<a href="/dashboard">Dashboard</a>
-			</li>
-			<li class="breadcrumb-link">
-				<a href="/dashboard">Home</a>
-			</li>
-			<li class="breadcrumb-current-item">Dashboard</li>
-		</ol>
-	</div>
-</header>
-<!-- -------------- /Topbar -------------- -->
-<!-- -------------- Content -------------- -->
+
 <section id="content" class="table-layout">
 	<div class="chute chute-center">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel">
+					<div class="panel-heading">
+						Announcement
+					</div>
+					<div class="panel-body">
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam officia magnam unde illum incidunt nesciunt placeat error tenetur at obcaecati dolorem, quos eligendi consectetur impedit architecto odio voluptates enim tempora?</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel">
+					<div class="panel-heading">Today's Leave</div>
+					<div class="panel-body"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatibus quisquam dolorem magnam dignissimos odit saepe, molestias inventore est fuga aut quibusdam voluptatem impedit, optio unde maxime et omnis illo!</p></div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel">
+					<div class="panel-heading">Newly Added Employees</div>
+					<div class="panel-body"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, distinctio? Et voluptates laboriosam, quod, dolorum ab qui laudantium in amet doloremque nobis nisi! Earum alias, dolore laudantium possimus iste eum.</p></div>
+				</div>
+			</div>
+		</div>
+		{{-- end --}}
 		<div class="row">
 			<div class="col-md-8">
 				<div class="panel">
@@ -57,7 +64,7 @@
 			<div class="col-md-4">
 				<div class="panel">
 					<div class="panel-heading">
-						<span class="panel-title">Draft New Announcement</span>
+						<span class="panel-title">Today's Leave</span>
 					</div>
 					<div class="panel-body ">
 						<div class="allcp-form theme-primary">
@@ -79,11 +86,11 @@
 				</div>
 			</div>
 		</div>
-	
-	{{-- row 2 --}}
+
+		{{-- row 2 --}}
 
 
-	<div class="row">
+		<div class="row">
 			<div class="col-md-8">
 				<div class="panel">
 					<div class="panel-heading">
@@ -204,7 +211,7 @@
 											</div>
 										</td>
 									</tr>
-		
+
 								</tbody>
 							</table>
 						</div>
@@ -216,7 +223,7 @@
 					<div class="panel-heading">
 						<span class="panel-title">Upcoming Holidays</span>
 					</div>
-		
+
 					<div class="panel-body panel-scroller scroller-lg scroller-pn">
 						<ol class="timeline-list">
 							<li class="timeline-item">
@@ -298,4 +305,5 @@
 	</div>
 	</div>
 </section>
+
 @endsection
