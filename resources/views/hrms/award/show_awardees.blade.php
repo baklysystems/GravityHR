@@ -69,7 +69,7 @@
                                                 <td class="text-center">
                                                     <div class="btn-group text-right">
                                                         <button type="button"
-                                                                class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
+                                                                class="btn btn-info br2 btn-xs fs12 dropdown-toggle"
                                                                 data-toggle="dropdown" aria-expanded="false"> Action
                                                             <span class="caret ml5"></span>
                                                         </button>

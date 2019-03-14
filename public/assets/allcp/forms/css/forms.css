@@ -329,7 +329,7 @@
 .allcp-form .file.append-button .button {
   left: 4px;
   right: auto;
-  background: #cb2122;
+  background: #1e1e1e;
   color: #ffffff;
 }
 .allcp-form .file.append-button > input.gui-input {
@@ -2628,6 +2628,7 @@
   background-color: #1e1e1e;
   text-decoration: none;
   -webkit-user-drag: none;
+  border-radius: 3px;
 }
 .wizard .actions li.disabled a {
   cursor: not-allowed;
@@ -3621,7 +3622,7 @@
   background-color: #1e1e1e;
 }
 .allcp-form.theme-primary .wizard .steps li.current a {
-  background-color: #1e1e1e;
+  background-color: #cb2122;
 }
 .allcp-form .bg-success {
   background-color: #c3d62d;

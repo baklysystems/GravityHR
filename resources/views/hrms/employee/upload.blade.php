@@ -1,4 +1,4 @@
-@extends('hrms.layouts.base') 
+@extends('hrms.layouts.base')
 @section('content')
 <!-- START CONTENT -->
 <div class="content">
@@ -84,7 +84,7 @@
 									</div>
 
 									<div class="section">
-										<input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+										<input type="submit" class="btn btn-bordered btn-success btn-block" value="Submit">
 										</button>
 									</div>
 

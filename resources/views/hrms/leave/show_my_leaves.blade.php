@@ -78,7 +78,7 @@
                                                         </button>
                                                     @elseif($leave->status==1)
                                                         <button type="button"
-                                                                class="btn btn-success br2 btn-xs fs12"
+                                                                class="btn btn-info br2 btn-xs fs12"
                                                                 aria-expanded="false"> <i class="fa fa-check"> Approved </i>
 
                                                         </button>
