@@ -187,6 +187,46 @@
 	</li>
 
 	@if(Auth::user()->isHR())
+		<li>
+			<a class="accordion-toggle" href="#">
+			<span class="fa fa-clock-o"></span>
+			<span class="sidebar-title"> Attendance </span>
+			<span class="caret"></span>
+			</a>
+			<ul class="nav sub-nav">
+				<li>
+					<a href="{{route('attendance-upload')}}">
+						<span class="glyphicon glyphicon-book"></span> Add Sheet</a>
+				</li>
+				<li>
+					<a href="{{route('attendance-manager')}}">
+									<span class="glyphicon glyphicon-book"></span> Attendance Listing</a>
+				</li>
+		
+			</ul>
+		</li>
+		
+		<li>
+			<a class="accordion-toggle" href="#">
+			<span class="fa fa-tree"></span>
+			<span class="sidebar-title">Holidays</span>
+			<span class="caret"></span>
+			</a>
+			<ul class="nav sub-nav">
+				<li>
+					<a href="/add-holidays">
+			<span class="glyphicon glyphicon-book"></span> Add Holiday </a>
+				</li>
+				<li>
+					<a href="/holiday-listing">
+			<span class="glyphicon glyphicon-modal-window"></span> Holiday Listings </a>
+				</li>
+			</ul>
+		</li>
+		
+		@endif
+
+	@if(Auth::user()->isHR())
 	<li>
 		<a class="accordion-toggle" href="/dashboard">
 	<span class="fa fa-arrow-circle-o-up"></span>
@@ -280,41 +320,7 @@
 			</li>
 		</ul>
 	</li>
-	@if(Auth::user()->isHR())
-	<li>
-		<a class="accordion-toggle" href="#">
-	<span class="fa fa-clock-o"></span>
-	<span class="sidebar-title"> Attendance </span>
-	<span class="caret"></span>
-	</a>
-		<ul class="nav sub-nav">
-			<li>
-				<a href="{{route('attendance-upload')}}">
-	<span class="glyphicon glyphicon-book"></span> Upload Sheets</a>
-			</li>
 
-		</ul>
-	</li>
-
-	<li>
-		<a class="accordion-toggle" href="#">
-	<span class="fa fa-tree"></span>
-	<span class="sidebar-title">Holidays</span>
-	<span class="caret"></span>
-	</a>
-		<ul class="nav sub-nav">
-			<li>
-				<a href="/add-holidays">
-	<span class="glyphicon glyphicon-book"></span> Add Holiday </a>
-			</li>
-			<li>
-				<a href="/holiday-listing">
-	<span class="glyphicon glyphicon-modal-window"></span> Holiday Listings </a>
-			</li>
-		</ul>
-	</li>
-
-	@endif
 
 	<li>
 		<a href="/download-forms">

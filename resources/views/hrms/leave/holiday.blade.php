@@ -28,7 +28,7 @@
 		<!-- -------------- Column Left -------------- -->
 		<aside class="chute chute-left chute290 bg-primary" data-chute-height="match">
 
-			{{-- <div class="chute-bin1 stretch1 btn-dimmer mt20">
+		<div class="chute-bin1 stretch1 btn-dimmer mt20">
 
 				<div class="tab-content pn br-n bg-none allcp-form-list">
 
@@ -44,40 +44,7 @@
 						</li>
 					</ul>
 				</div>
-			</div> --}}
-			<div class="list-group list-group-links in-bg-chute mt20">
-				
-				<a href="#" class="list-group-item">
-			                        <i class="fa fa-envelope-o"></i>
-			                        Inbox
-			                        <span class="label badge-success">4</span>
-			                    </a>
-				<a href="#" class="list-group-item">
-			                        <i class="fa fa-save"></i>
-			                        Drafts
-			                    </a>
-				<a href="#" class="list-group-item">
-			                        <i class="fa fa-file-o"></i>
-			                        Sent Items
-			                    </a>
-				<a href="#" class="list-group-item">
-			                        <i class="fa fa-times-circle-o"></i>
-			                        Spam
-			                    </a>
-				<a href="#" class="list-group-item">
-			                        <i class="fa fa-trash-o"></i>
-			                        Trash
-			                    </a>
-				<a href="#" class="list-group-item">
-			                        <i class="fa fa-spinner"></i>
-			                        Email Settings
-			                    </a>
-				<a href="#" class="list-group-item">
-			                        <i class="fa fa-smile-o"></i>
-			                        Contacts
-			                        <span class="label badge-dark">3</span>
-			                    </a>
-			</div>
+			</div> 
 		</aside>
 		<!-- -------------- /Column Left -------------- -->
 
