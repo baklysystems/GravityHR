@@ -38,18 +38,18 @@ class AttendanceManager extends Model
 
     public static function saveExcelData($row, $hoursWorked, $difference)
     {
-        $user = Employee::where('code', $row->code)->first();
+        $user = Employee::where('biometric_id', $row->code)->first();
         $attendance = new AttendanceManager();
         $attendance->name = $row->name;
         $attendance->code = $row->code;
-        $attendance->date = date_format(date_create($row->date), 'Y-m-d');
-        $attendance->day = covertDateToDay($row->days);
-        \Log::info('inTime='.$row->in_time);
-        $attendance->in_time = isset($row->in_time)? $row->in_time : 'H:i:s' ;
-        $attendance->out_time = isset($row->out_time)? $row->out_time : 'H:i:s';
-        $attendance->status = convertAttendanceTo(preg_replace('/\s+/', '', $row->status));
+        $attendance->date = date('Y-m-d', strtotime($row->date));
+        $attendance->day = $row->days;
+        //\Log::info('inTime='.$row->in_time);
+        $attendance->in_time = date('H:i:s', strtotime($row->in_time));
+        $attendance->out_time = date('H:i:s', strtotime($row->out_time));
+        $attendance->status = 0; //convertAttendanceTo(preg_replace('/\s+/', '', $row->status));
         $attendance->leave_status = $row->leave_status;
-        $attendance->user_id = $user->user_id;
+        $attendance->user_id = $user->id;
         $attendance->hours_worked = $hoursWorked;
         $attendance->difference = $difference;
         $attendance->save();
