@@ -147,6 +147,7 @@
 	<script src="{{ URL::asset('assets/js/demo/widgets_sidebar.js') }}"></script>
 	<script src="{{ URL::asset('assets/js/pages/dashboard1.js') }}"></script>
 
+
 	<!-- Sweet alert -->
 	<script src="{{ URL::asset('assets/js/sweetalert.min.js') }}"></script>
 
@@ -257,7 +258,7 @@
 
 	</script>
 
-	<script src="{{ URL::asset('assets/js/pages/allcp_forms-elements.js') }}"></script>
+<script src="{{ URL::asset('assets/js/pages/allcp_forms-elements.js') }}"></script>
 </body>
 
 </html>

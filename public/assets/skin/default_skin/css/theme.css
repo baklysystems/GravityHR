@@ -18682,7 +18682,7 @@ ul.chute-nav li.active a {
 }
 .chute[class*="bg-"] ul.chute-nav li a:focus,
 .chute[class*="bg-"] ul.chute-nav li a:hover {
-  color: #2a2f43;
+  color: #b7b7b7;
 }
 .chute[class*="bg-"] ul.chute-nav li.active a {
   color: #1d8491;
@@ -21289,7 +21289,7 @@ a.bg-warning:hover {
   color: #ffffff;
 }
 .bg-danger {
-  background-color: #f5393d !important;
+  background-color: #C92529 !important;
   color: #fffbfb;
 }
 a.bg-danger:hover {

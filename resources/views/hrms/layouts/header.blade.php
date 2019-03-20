@@ -1,5 +1,9 @@
 <header class="navbar navbar-fixed-top bg-dark">
 	<div class="navbar-logo-wrapper dark bg-dark">
+		{{-- <a class="navbar-logo-text" href="dashboard1.html">
+		<img src="{{ URL::asset('assets/img/grav_logo.png') }}" class="center-block">
+		</a> --}}
+	
 		<span id="sidebar_left_toggle" class="ad ad-lines"></span>
 	</div>
 
@@ -75,7 +79,7 @@
 			<div class="navbar-btn btn-group">
 				<li class="dropdown dropdown-fuse">
 					<a href="#" class="dropdown-toggle fw600" data-toggle="dropdown">
-				<span class="hidden-xs"><name>{{\Auth::user()->name}}</name> </span>
+				<span class="hidden-xs">{{\Auth::user()->name}}</span>
 				<span class="fa fa-caret-down hidden-xs mr5"></span>
 				@if(\Auth::user()->employee->photo)
 					<img src="{{\Auth::user()->employee->photo}}" alt="avatar" class="mw40" style="border-radius: 100%;">

@@ -632,7 +632,7 @@
   background-color: #f4f6f6;
   border-color: #d5dbdb!important;
   cursor: default;
-  color: #d5dbdb;
+  color: #585d5d;
   opacity: 0.7;
 }
 .allcp-form input[disabled] ~ .field-icon i,
@@ -693,9 +693,22 @@
 .allcp-form .append-icon .field-icon {
   right: 0;
 }
+
+.allcp-form .prepend-icon > input,
+.allcp-form .prepend-icon > textarea {
+  padding-left: 36px;
+}
+
+.allcp-form .append-icon > input,
+.allcp-form .append-icon > textarea {
+  padding-right: 36px;
+  padding-left: 10px;
+}
+
 .allcp-form .append-icon > textarea {
   padding-right: 36px;
 }
+
 @media (max-width: 359px) {
   .allcp-form .prepend-icon > .field-icon {
     display: none;

@@ -4,7 +4,7 @@
 <section id="content" class="animated fadeIn">
 	<div class="row">
 		<!-- -------------- FAQ Left Column -------------- -->
-		<div class="col-md-9">
+		<div class="col-md-12">
 			<div class="panel">
 				<div class="panel-body pn mtn">
 					<div class="br-b">
@@ -12,13 +12,13 @@
 					</div>
 					<div class="mt40">
 						<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ30Jtt0qRpp2KFenn6zvonelhi5dGOhflyvTtca8puPRoxcVvN-1JtI-TlrVdLCTz3sxg6zpeuamcx/embed?start=false&loop=true&delayms=3000"
-						 frameborder="0" width="100%" height="600px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+						 frameborder="0" width="100%" height="700px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- -------------- FAQ Right Column -------------- -->
-		<div class="col-md-3">
+		{{-- <div class="col-md-3">
 			
 			<div class="panel mb10">
 				<div class="panel-heading">
@@ -69,7 +69,7 @@
 					</ul>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 	</div>
 </section>
 @endsection

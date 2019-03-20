@@ -12,8 +12,6 @@
 			</a>
 	</li>
 
-
-
 	@if(Auth::user()->isHR())
 	<li>
 		<a class="accordion-toggle" href="/dashboard">
@@ -195,14 +193,13 @@
 			</a>
 			<ul class="nav sub-nav">
 				<li>
-					<a href="{{route('attendance-upload')}}">
-						<span class="glyphicon glyphicon-book"></span> Add Sheet</a>
-				</li>
+						<a href="{{route('attendance-manager')}}">
+														<span class="glyphicon glyphicon-book"></span> Attendance Listing</a>
+					</li>
 				<li>
-					<a href="{{route('attendance-manager')}}">
-									<span class="glyphicon glyphicon-book"></span> Attendance Listing</a>
+					<a href="{{route('attendance-upload')}}">
+						<span class="glyphicon glyphicon-book"></span> Upload Attendance</a>
 				</li>
-		
 			</ul>
 		</li>
 		
@@ -319,15 +316,15 @@
 	<span class="fa fa-clipboard"></span> Invitation Listings </a>
 			</li>
 		</ul>
-	</li>
+	</li> 
 
 
-	<li>
+	 {{-- <li>
 		<a href="/download-forms">
 			<span class="fa fa-book"></span>
 			<span class="sidebar-title">Download Forms</span>
 		</a>
-	</li>
+	</li> --}}
 
 	<li>
 		<a href="/hr-policy">
