@@ -3347,6 +3347,9 @@
   color: #fff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.08);
 }
+.btn-margin{
+  margin: 0  0 30px 27px !important;
+}
 .allcp-form .switch-info > input:checked + label {
   background: transparent;
   border-color: #4fd8b0;
@@ -3619,7 +3622,7 @@
 }
 .allcp-form.theme-primary .wizard .steps li a,
 .allcp-form.theme-primary .wizard .actions li a {
-  background-color: #1e1e1e;
+  background-color: #cb2122;
 }
 .allcp-form.theme-primary .wizard .steps li.current a {
   background-color: #cb2122;

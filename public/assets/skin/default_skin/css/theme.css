@@ -14061,7 +14061,7 @@ i.field-icon-right {
 .breadcrumb .glyphicons {
   background-color: #cb2122;
   -webkit-border-radius: 2px;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #ffffff;
   display: block;
   font-size: 17px;

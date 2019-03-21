@@ -95,11 +95,11 @@
 										<div class="col-md-12">
 											<div class="section">
 												<label for="input002"><h6 class="mb5 mtn"> Employee ID</h6></label>
-												<label for="input002" class="field prepend-icon"> 
+												<label for="input002" class="field prepend-icon">
 													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
-													<input type="text" name="code" id="code" class="gui-input" value="{{$emps->employee->code}}" disabled="disabled"> 
+													<input type="text" name="code" id="code" class="gui-input" value="{{$emps->employee->code}}" disabled="disabled">
 													@else
-													<input type="text" name="code" id="code" class="gui-input" placeholder="H18000" required="required"> 
+													<input type="text" name="code" id="code" class="gui-input" placeholder="H18000" required="required">
 													@endif
 												</label>
 											</div>
@@ -256,7 +256,7 @@
 												<label for="input002"><h6 class="mb5 mtn"> Work Email </h6></label>
 												<label for="input002" class="field prepend-icon">
 													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
-													<input type="email" name="work_email" id="work_email" class="gui-input email-group" 
+													<input type="email" name="work_email" id="work_email" class="gui-input email-group"
 													value="@if($emps && $emps->employee->work_email){{$emps->employee->work_email}}@endif">
 													@else
 													<input type="email" name="work_email" id="work_email" class="gui-input email-group">
@@ -269,7 +269,7 @@
 												<label for="input002"><h6 class="mb5 mtn"> Personal Email </h6></label>
 												<label for="input002" class="field prepend-icon">
 													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
-													<input type="email" name="personal_email" id="personal_email" class="gui-input email-group" 
+													<input type="email" name="personal_email" id="personal_email" class="gui-input email-group"
 													value="@if($emps && $emps->employee->personal_email){{$emps->employee->personal_email}}@endif">
 													@else
 													<input type="email" name="personal_email" id="personal_email" class="gui-input email-group">
@@ -340,7 +340,7 @@
 												<div class="option-group field">
 													@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<label class="field option mb5">
-<input type="radio" name="status" id="status" value="1" @if(isset($emps))@if($emps->employee->status == '1') checked @endif @endif>	
+<input type="radio" name="status" id="status" value="1" @if(isset($emps))@if($emps->employee->status == '1') checked @endif @endif>
 <span class="radio"></span>Active</label>
 													<label class="field option mb5">
 <input type="radio" name="status" id="status" value="0" @if(isset($emps))@if($emps->employee->status == '0') checked @endif @endif>
@@ -426,7 +426,7 @@ value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" r
 									<div class="row">
 										<div class="col-md-12">
 											<div class="section">
-												<label for="input002"><h6 class="mb5 mtn"> Work Shift </h6></label> 
+												<label for="input002"><h6 class="mb5 mtn"> Work Shift </h6></label>
 												@if(\Route::getFacadeRoot()->current()->uri() == 'employee/{id}/edit')
 													<select class="select2-single form-control" name="shift" id="shift" required="required">
 													<option value="">Select a shift</option>
@@ -436,14 +436,14 @@ value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" r
 														@endif
 													<option value="{{$shift->id}}">{{$shift->name}}</option>
 													@endforeach
-													</select> 
+													</select>
 												@else
 												<select class="select2-single form-control" name="shift" id="shift" required="required">
 													<option value="">Select shift</option>
 													@foreach($shifts as $shift)
 													<option value="{{$shift->id}}">{{$shift->name}}</option>
 													@endforeach
-												</select> 
+												</select>
 												@endif
 											</div>
 										</div>
@@ -584,7 +584,7 @@ class="gui-input phone-group" maxlength="10" minlength="10">
 									</div>
 									{{-- here --}}
 								</section>
-								<input value="Save Changes" type="submit" class="btn btn-info" />
+								<input value="Save Changes" type="submit" class="btn btn-info btn-margin" />
 							</div>
 							<!-- -------------- /Wizard -------------- -->
 						</form>
@@ -622,23 +622,23 @@ aria-hidden="true">&times;</span></button>
 	<style> .wizard .steps .fa, .wizard .steps .glyphicon, .wizard .steps .glyphicon { display: none; } </style>
 	<!-- -------------- Scripts -------------- -->
 	<!-- -------------- jQuery -------------- -->
-	{!! Html::script('/assets/js/jquery/jquery-1.11.3.min.js') !!} 
+	{!! Html::script('/assets/js/jquery/jquery-1.11.3.min.js') !!}
 	{!! Html::script('/assets/js/jquery/jquery_ui/jquery-ui.min.js')!!}
 	<!-- -------------- HighCharts Plugin -------------- -->
 	{!! Html::script('/assets/js/plugins/highcharts/highcharts.js') !!}
 	<!-- -------------- MonthPicker JS -------------- -->
-	{!! Html::script('/assets/allcp/forms/js/jquery-ui-monthpicker.min.js') !!} 
-	{!! Html::script('/assets/allcp/forms/js/jquery-ui-datepicker.min.js') !!} 
-	{!! Html::script('/assets/allcp/forms/js/jquery.spectrum.min.js') !!} 
+	{!! Html::script('/assets/allcp/forms/js/jquery-ui-monthpicker.min.js') !!}
+	{!! Html::script('/assets/allcp/forms/js/jquery-ui-datepicker.min.js') !!}
+	{!! Html::script('/assets/allcp/forms/js/jquery.spectrum.min.js') !!}
 	{!! Html::script('/assets/allcp/forms/js/jquery.stepper.min.js') !!}
 	<!-- -------------- Plugins -------------- -->
-	{!! Html::script('/assets/allcp/forms/js/jquery.validate.min.js') !!} 
+	{!! Html::script('/assets/allcp/forms/js/jquery.validate.min.js') !!}
 	{!! Html::script('/assets/allcp/forms/js/jquery.steps.min.js') !!}
 	<!-- -------------- Theme Scripts -------------- -->
-	{!! Html::script('/assets/js/utility/utility.js') !!} 
-	{!! Html::script('/assets/js/demo/demo.js') !!} 
-	{!! Html::script('/assets/js/main.js') !!} 
-	{!! Html::script('/assets/js/demo/widgets_sidebar.js') !!} 
+	{!! Html::script('/assets/js/utility/utility.js') !!}
+	{!! Html::script('/assets/js/demo/demo.js') !!}
+	{!! Html::script('/assets/js/main.js') !!}
+	{!! Html::script('/assets/js/demo/widgets_sidebar.js') !!}
 	{!! Html::script('/assets/js/custom_form_wizard.js') !!}
 	{!! Html::script ('/assets/js/pages/forms-widgets.js')!!}
 	<!-- -------------- Select2 JS -------------- -->
